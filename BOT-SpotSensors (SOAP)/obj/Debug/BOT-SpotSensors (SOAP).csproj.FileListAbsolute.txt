@@ -1,0 +1,9 @@
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll.config
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).pdb
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\bin\ParkingSensorNodeDll.dll
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csprojAssemblyReference.cache
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CoreCompileInputs.cache
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CopyComplete
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).dll
+Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).pdb
