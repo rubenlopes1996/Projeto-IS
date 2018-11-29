@@ -1,12 +1,38 @@
-<parkingSpot>
-  <id>1</id>
-  <type>Parking spot</type>
-  <name>Spot0</name>
-  <location>
-  </location>
-  <status>
-    <value>occupied</value>
-    <timestamp>29/11/18 17:55:31</timestamp>
-  </status>
-  <batteryStatus>0</batteryStatus>
-</parkingSpot>
+<Spots>
+  <parkingSpot>
+    <id>1</id>
+    <type>Parking spot</type>
+    <name>B-01</name>
+    <location>
+    </location>
+    <status>
+      <value>occupied</value>
+      <timestamp>29/11/18 18:51:07</timestamp>
+    </status>
+    <batteryStatus>1</batteryStatus>
+  </parkingSpot>
+  <parkingSpot>
+    <id>1</id>
+    <type>Parking spot</type>
+    <name>B-11</name>
+    <location>
+    </location>
+    <status>
+      <value>occupied</value>
+      <timestamp>29/11/18 18:51:07</timestamp>
+    </status>
+    <batteryStatus>1</batteryStatus>
+  </parkingSpot>
+  <parkingSpot>
+    <id>1</id>
+    <type>Parking spot</type>
+    <name>B-21</name>
+    <location>
+    </location>
+    <status>
+      <value>occupied</value>
+      <timestamp>29/11/18 18:51:07</timestamp>
+    </status>
+    <batteryStatus>1</batteryStatus>
+  </parkingSpot>
+</Spots>

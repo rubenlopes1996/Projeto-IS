@@ -49,8 +49,7 @@ namespace ParkDace
         private void buttonFetchBotSpots_Click(object sender, EventArgs e)
         {
             BotSpotSensors.ServiceBot_SpotSensorClient service = new BotSpotSensors.ServiceBot_SpotSensorClient();
-           
-
+            
 
         }
     }

@@ -53,6 +53,9 @@ namespace BOT_SpotSensors__SOAP_
         public String CreateSensorDataXML(string id, int numberOfSpots)
         {
             XmlDocument doc = new XmlDocument();
+            XmlElement root = doc.CreateElement("Spots");
+            doc.AppendChild(root);
+
 
             for (int i = 0; i < numberOfSpots; i++)
             {
@@ -65,7 +68,7 @@ namespace BOT_SpotSensors__SOAP_
                 typeSpot.InnerText = "Parking spot";
 
                 XmlElement nameSpot = doc.CreateElement("name");
-                nameSpot.InnerText = "Spot" + i;
+                nameSpot.InnerText = "B-" + i+1;
 
                 XmlElement locationSpot = doc.CreateElement("location");
                 locationSpot.InnerText = "";
@@ -100,7 +103,10 @@ namespace BOT_SpotSensors__SOAP_
                 statusSpot.AppendChild(timestamp);
                 parkingSpot.AppendChild(statusSpot);
                 parkingSpot.AppendChild(batteryStatus);
-                doc.AppendChild(parkingSpot);
+                root.AppendChild(parkingSpot);
+
+
+
 
             }
 
