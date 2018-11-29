@@ -1,0 +1,12 @@
+<parkingSpot>
+  <id>1</id>
+  <type>Parking spot</type>
+  <name>Spot0</name>
+  <location>
+  </location>
+  <status>
+    <value>occupied</value>
+    <timestamp>29/11/18 17:55:31</timestamp>
+  </status>
+  <batteryStatus>0</batteryStatus>
+</parkingSpot>

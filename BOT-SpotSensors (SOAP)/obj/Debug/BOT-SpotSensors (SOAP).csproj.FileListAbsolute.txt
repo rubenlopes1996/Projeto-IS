@@ -7,3 +7,11 @@ Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solutio
 Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CopyComplete
 Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).dll
 Y:\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).pdb
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll.config
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).pdb
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CopyComplete
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).dll
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).pdb

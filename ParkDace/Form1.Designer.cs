@@ -31,15 +31,16 @@
             this.button_fetchSpots = new System.Windows.Forms.Button();
             this.button_stopFetching = new System.Windows.Forms.Button();
             this.richTextBoxSpotsDLL = new System.Windows.Forms.RichTextBox();
+            this.buttonFetchBotSpots = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_fetchSpots
             // 
             this.button_fetchSpots.Location = new System.Drawing.Point(60, 355);
             this.button_fetchSpots.Name = "button_fetchSpots";
-            this.button_fetchSpots.Size = new System.Drawing.Size(102, 23);
+            this.button_fetchSpots.Size = new System.Drawing.Size(199, 23);
             this.button_fetchSpots.TabIndex = 1;
-            this.button_fetchSpots.Text = "Fetch Spots";
+            this.button_fetchSpots.Text = "Fetch Spots DLL Park 1";
             this.button_fetchSpots.UseVisualStyleBackColor = true;
             this.button_fetchSpots.Click += new System.EventHandler(this.button_fetchSpots_Click);
             // 
@@ -62,11 +63,22 @@
             this.richTextBoxSpotsDLL.Text = "";
             this.richTextBoxSpotsDLL.TextChanged += new System.EventHandler(this.richTextBoxSpotsDLL_TextChanged);
             // 
+            // buttonFetchBotSpots
+            // 
+            this.buttonFetchBotSpots.Location = new System.Drawing.Point(60, 385);
+            this.buttonFetchBotSpots.Name = "buttonFetchBotSpots";
+            this.buttonFetchBotSpots.Size = new System.Drawing.Size(199, 23);
+            this.buttonFetchBotSpots.TabIndex = 4;
+            this.buttonFetchBotSpots.Text = "Fetch Spots Bot Park 2";
+            this.buttonFetchBotSpots.UseVisualStyleBackColor = true;
+            this.buttonFetchBotSpots.Click += new System.EventHandler(this.buttonFetchBotSpots_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonFetchBotSpots);
             this.Controls.Add(this.richTextBoxSpotsDLL);
             this.Controls.Add(this.button_stopFetching);
             this.Controls.Add(this.button_fetchSpots);
@@ -81,6 +93,7 @@
         private System.Windows.Forms.Button button_fetchSpots;
         private System.Windows.Forms.Button button_stopFetching;
         private System.Windows.Forms.RichTextBox richTextBoxSpotsDLL;
+        private System.Windows.Forms.Button buttonFetchBotSpots;
     }
 }
 

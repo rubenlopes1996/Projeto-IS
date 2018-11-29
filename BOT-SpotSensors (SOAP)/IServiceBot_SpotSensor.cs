@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml;
 
 namespace BOT_SpotSensors__SOAP_
 {
@@ -13,9 +14,11 @@ namespace BOT_SpotSensors__SOAP_
     public interface IServiceBot_SpotSensor
     {
         [OperationContract]
-        string CreateSensorDataXML(string id, int numberOfSpots);
+        List<ParkingSpot> CreateSensorData(int id, int numberOfSpots);
+
         [OperationContract]
-        ParkingSpot CreateSensorData(int id, string name, string location, bool value, DateTime timestamp, bool batteryStatus);
+        string CreateSensorDataXML(string id, int numberOfSpots);
+
        
     }
 
@@ -34,13 +37,13 @@ namespace BOT_SpotSensors__SOAP_
         public string Location { get; set; }
 
         [DataMember]
-        public bool Value { get; set; }
+        public string Value { get; set; }
 
         [DataMember]
         public DateTime Timestamp { get; set; }
 
         [DataMember]
-        public bool BatteryStatus { get; set; }
+        public int BatteryStatus { get; set; }
 
 
 

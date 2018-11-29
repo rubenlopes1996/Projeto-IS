@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ParkDace
 {
@@ -22,6 +23,8 @@ namespace ParkDace
         {
             dll = new ParkingSensorNodeDll.ParkingSensorNodeDll();
             dll.Initialize(SpotsPark, 800);
+
+
         }
 
         private void SpotsPark(string str)
@@ -40,6 +43,14 @@ namespace ParkDace
 
         private void richTextBoxSpotsDLL_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonFetchBotSpots_Click(object sender, EventArgs e)
+        {
+            BotSpotSensors.ServiceBot_SpotSensorClient service = new BotSpotSensors.ServiceBot_SpotSensorClient();
+           
+
 
         }
     }

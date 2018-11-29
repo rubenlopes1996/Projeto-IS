@@ -13,25 +13,49 @@ namespace BOT_SpotSensors__SOAP_
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IServiceBot_SpotSensor
     {
-        public ParkingSpot CreateSensorData(int id, string name, string location, bool value, DateTime timestamp, bool batteryStatus)
+        public List<ParkingSpot> CreateSensorData(int id, int numberSpots)
         {
-            return new ParkingSpot
+            List<ParkingSpot> spots = new List<ParkingSpot>();
+            for (int i = 0; i < numberSpots; i++)
             {
-                Id = id,
-                Name = name,
-                Location = location,
-                Value = value,
-                Timestamp = timestamp,
-                BatteryStatus = batteryStatus,
-            };
+                Random random = new Random();
+                int value = random.Next(0, 2);
+                string valueSpot = value == 0 ? "free" : "occupied";
+
+                int rand = random.Next(0, 50);
+                int batteryStatus;
+                if (rand < 45)
+                {
+                    batteryStatus = 0;
+                }
+
+                else
+                {
+                    batteryStatus = 1;
+                }
+
+                 ParkingSpot spot = new ParkingSpot
+                {
+                    Id = id,
+                    Name ="Spot"+i,
+                    Location = "",
+                    Value = valueSpot,
+                    Timestamp = DateTime.Now,
+                    BatteryStatus = batteryStatus,
+                };
+
+                spots.Add(spot);
+            }
+            return spots;
+
         }
 
-        public string CreateSensorDataXML(string id, int numberOfSpots)
+        public String CreateSensorDataXML(string id, int numberOfSpots)
         {
-            String xmlReturn = "";
+            XmlDocument doc = new XmlDocument();
+
             for (int i = 0; i < numberOfSpots; i++)
             {
-                XmlDocument doc = new XmlDocument();
                 XmlElement parkingSpot = doc.CreateElement("parkingSpot");
 
                 XmlElement idSpot = doc.CreateElement("id");
@@ -57,24 +81,34 @@ namespace BOT_SpotSensors__SOAP_
                 timestamp.InnerText = DateTime.Now.ToString();
 
                 XmlElement batteryStatus = doc.CreateElement("batteryStatus");
-                batteryStatus.InnerText = value == 0 ? "0" : "1";
+                int rand = random.Next(0, 50);
+                if (rand < 45) 
+                {
+                    batteryStatus.InnerText = "0";
+                }
+                 
+                else 
+                {
+                    batteryStatus.InnerText = "1";
+                }
 
                 parkingSpot.AppendChild(idSpot);
                 parkingSpot.AppendChild(typeSpot);
                 parkingSpot.AppendChild(nameSpot);
+                parkingSpot.AppendChild(locationSpot);
                 statusSpot.AppendChild(valueSpot);
                 statusSpot.AppendChild(timestamp);
                 parkingSpot.AppendChild(statusSpot);
                 parkingSpot.AppendChild(batteryStatus);
                 doc.AppendChild(parkingSpot);
 
-                xmlReturn += doc.OuterXml;
-
             }
 
-            return xmlReturn;
+            return doc.OuterXml;
+
+
         }
 
-      
+
     }
 }

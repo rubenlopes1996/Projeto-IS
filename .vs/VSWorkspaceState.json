@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BOT-SpotSensors (SOAP)",
+    "\\ParkDace"
   ],
-  "SelectedNode": "\\BOT-SpotSensors (SOAP) - Solution.sln",
+  "SelectedNode": "\\BOT-SpotSensors (SOAP)\\BOT-SpotSensors (SOAP).csproj.user",
   "PreviewInSolutionExplorer": false
 }

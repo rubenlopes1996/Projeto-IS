@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOT-SpotSensors (SOAP)", "BOT-SpotSensors (SOAP)\BOT-SpotSensors (SOAP).csproj", "{14FF4EEF-7569-4261-BF3B-ED0E5F8C884F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkDace", "ParkDace\ParkDace.csproj", "{967B22BB-0F6B-4EED-8023-2776A711B91D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14FF4EEF-7569-4261-BF3B-ED0E5F8C884F} = {14FF4EEF-7569-4261-BF3B-ED0E5F8C884F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
