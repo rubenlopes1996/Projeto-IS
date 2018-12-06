@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\BotSpotSensors\Reference.cs">
+    <Compile Include="Connected Services\BotSpotSensor\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -77,19 +77,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\BotSpotSensors\IServiceBot_SpotSensor.xsd">
+    <None Include="Connected Services\BotSpotSensor\IServiceBot_SpotSensor.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BotSpotSensors\IServiceBot_SpotSensor1.xsd">
+    <None Include="Connected Services\BotSpotSensor\IServiceBot_SpotSensor1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BotSpotSensors\IServiceBot_SpotSensor2.xsd">
+    <None Include="Connected Services\BotSpotSensor\IServiceBot_SpotSensor2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BotSpotSensors\ParkDace.BotSpotSensors.ParkingSpot.datasource">
+    <None Include="Connected Services\BotSpotSensor\ParkDace.BotSpotSensor.ParkingSpot.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BotSpotSensors\Service1.wsdl" />
+    <None Include="Connected Services\BotSpotSensor\Service1.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,22 +107,51 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\BotSpotSensors\" />
+    <WCFMetadataStorage Include="Connected Services\BotSpotSensor\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BotSpotSensors\IServiceBot_SpotSensor.disco" />
+    <None Include="Connected Services\BotSpotSensor\IServiceBot_SpotSensor.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BotSpotSensors\configuration91.svcinfo" />
+    <None Include="Connected Services\BotSpotSensor\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BotSpotSensors\configuration.svcinfo" />
+    <None Include="Connected Services\BotSpotSensor\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BotSpotSensors\Reference.svcmap">
+    <None Include="Connected Services\BotSpotSensor\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

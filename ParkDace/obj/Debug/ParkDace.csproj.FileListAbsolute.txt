@@ -22,3 +22,4 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.Cor
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.CopyComplete
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.exe
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.pdb
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.ResolveComReference.cache
