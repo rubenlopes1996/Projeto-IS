@@ -14,10 +14,10 @@ namespace BOT_SpotSensors__SOAP_
     public interface IServiceBot_SpotSensor
     {
         [OperationContract]
-        List<ParkingSpot> CreateSensorData(int id, int numberOfSpots);
+        List<ParkingSpot> CreateSensorData(int numberOfSpots);
 
         [OperationContract]
-        string CreateSensorDataXML(string id, int numberOfSpots);
+        string CreateSensorDataXML();
 
        
     }
@@ -27,8 +27,8 @@ namespace BOT_SpotSensors__SOAP_
     [DataContract]
     public class ParkingSpot
     {
-        [DataMember]
-        public int Id { get; set; }
+        //[DataMember]
+        //public int Id { get; set; }
 
         [DataMember]
         public string Name { get; set; }
