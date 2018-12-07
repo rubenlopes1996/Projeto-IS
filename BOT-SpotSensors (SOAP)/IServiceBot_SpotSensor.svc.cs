@@ -13,15 +13,11 @@ namespace BOT_SpotSensors__SOAP_
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IServiceBot_SpotSensor
     {
-        public List<ParkingSpot> CreateSensorData(int numberSpots)
+        public ParkingSpot CreateSensorData()
         {
-            List<ParkingSpot> spots = new List<ParkingSpot>();
-            for (int i = 0; i < numberSpots; i++)
-            {
                 Random random = new Random();
                 int value = random.Next(0, 2);
                 string valueSpot = value == 0 ? "free" : "occupied";
-
                 int rand = random.Next(0, 50);
                 int batteryStatus;
                 if (rand < 45)
@@ -36,17 +32,15 @@ namespace BOT_SpotSensors__SOAP_
 
                  ParkingSpot spot = new ParkingSpot
                 {
-                    //Id = id,
-                    Name ="Spot"+i,
+                    Id = "",
+                    Name ="",
                     Location = "",
                     Value = valueSpot,
                     Timestamp = DateTime.Now,
                     BatteryStatus = batteryStatus,
                 };
 
-                spots.Add(spot);
-            }
-            return spots;
+            return spot;
 
         }
 
@@ -58,8 +52,8 @@ namespace BOT_SpotSensors__SOAP_
             
             XmlElement parkingSpot = doc.CreateElement("parkingSpot");
             doc.AppendChild(parkingSpot);
-            //XmlElement idSpot = doc.CreateElement("id");
-            //idSpot.InnerText = id;
+            XmlElement idSpot = doc.CreateElement("id");
+            idSpot.InnerText = "";
 
             XmlElement typeSpot = doc.CreateElement("type");
             typeSpot.InnerText = "Parking spot";
@@ -92,7 +86,7 @@ namespace BOT_SpotSensors__SOAP_
                 batteryStatus.InnerText = "1";
             }
 
-            //parkingSpot.AppendChild(idSpot);
+            parkingSpot.AppendChild(idSpot);
             parkingSpot.AppendChild(typeSpot);
             parkingSpot.AppendChild(nameSpot);
             parkingSpot.AppendChild(locationSpot);

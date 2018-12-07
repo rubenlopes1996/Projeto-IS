@@ -1,6 +1,4 @@
 <parkingLocation refreshRate="2" units="minutes">
-
-    <!-- Example for the DLL provider -->
     <provider>
         <connectionType>DLL</connectionType>
         <endpoint>DLLname</endpoint>
@@ -13,11 +11,9 @@
             <geoLocationFile>Campus_2_A_Park1.xlsx</geoLocationFile>
         </parkInfo>
     </provider>
-
-    <!-- Example for a SOAP provider -->
     <provider>
         <connectionType>SOAP</connectionType>
-        <endpoint>http://botservice-dummy-location/ServiceParkingSpots?wsdl</endpoint>
+        <endpoint>http://localhost:50071/IServiceBot_SpotSensor.svc</endpoint>
         <parkInfo>
             <id>Campus_2_B_Park2</id>
             <description>Parking between the A and the B building</description>
@@ -27,5 +23,4 @@
             <geoLocationFile>Campus_2_B_Park2.xlsx</geoLocationFile>
         </parkInfo>
     </provider>
-
 </parkingLocation>

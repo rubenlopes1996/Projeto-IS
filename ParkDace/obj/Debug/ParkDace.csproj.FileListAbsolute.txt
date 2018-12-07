@@ -23,3 +23,4 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.Cop
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.exe
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.pdb
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.ResolveComReference.cache
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkDace\obj\Debug\ParkDace.csproj.ResolveComReference.cache

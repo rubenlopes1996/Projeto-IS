@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -17,55 +9,13 @@ namespace ParkDace
     {
         private static string[] spotsId, spotLocation;
         private static int numParkingSpotsDLL=15, numParkingSpotsBOT=10;
+        private static string parkId;
+        private static string geoLocationBOT, geoLocationDLL;
         ParkingSensorNodeDll.ParkingSensorNodeDll dll = null;
 
         public Form1()
         {
             InitializeComponent();
-            
-
-        }
-
-        private void button_fetchSpots_Click(object sender, EventArgs e)
-        {
-            dll = new ParkingSensorNodeDll.ParkingSensorNodeDll();
-            dll.Initialize(SpotsPark, 800);
-
-
-        }
-
-        private void SpotsPark(string str)
-        {
-            this.BeginInvoke((MethodInvoker)delegate
-            {
-                richTextBoxSpotsDLL.AppendText(str + "\n");
-            });
-        }
-
-        private void button_stopFetching_Click_1(object sender, EventArgs e)
-        {
-            dll.Stop();
-
-        }
-
-        private void richTextBoxSpotsDLL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonFetchBotSpots_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-            
-            
-            /*for (int i = 0; i < length; i++)
-            {
-
-                service.CreateSensorDataXML(10);
-            }*/
-            
-            
-
         }
 
         private static string ReadFromExcelFile(string filename)
@@ -79,13 +29,10 @@ namespace ParkDace
             Excel.Workbook workbook = excelApp.Workbooks.Open(filename);
             Excel.Worksheet sheet1 = workbook.ActiveSheet;
 
-            var parkId = (sheet1.Cells[1, 2] as Excel.Range).Value;
-            var numberOfSpots = (sheet1.Cells[2, 2] as Excel.Range).Value;
-            //var number2s = (sheet1.Cells[6, 1] as Excel.Range).Value;
+            parkId = (sheet1.Cells[1, 2] as Excel.Range).Value;
 
-
-            spotsId = new string[numParkingSpotsBOT];
-            spotLocation = new string[numParkingSpotsBOT];
+            spotsId = new string[numParkingSpotsDLL];
+            spotLocation = new string[numParkingSpotsDLL];
 
             for (int i = 0; i < numParkingSpotsBOT; i++)
             {
@@ -107,6 +54,86 @@ namespace ParkDace
             ReleaseCOMObject(excelApp);
 
             return result;
+        }
+
+        private void btnStartDataAcquisition_Click(object sender, EventArgs e)
+        {
+            timerBot.Enabled = true;
+            timerDLL.Enabled = true;
+
+            XmlDocument document = new XmlDocument();
+            document.Load(AppDomain.CurrentDomain.BaseDirectory + "ParkingNodesConfig.xml");
+
+            XmlNode xmlLocationnDLL = document.SelectSingleNode("parkingLocation/provider/parkInfo/geoLocationFile").LastChild;
+            geoLocationDLL = xmlLocationnDLL.OuterXml;
+
+            XmlNode xmlLocationBOT = document.SelectSingleNode("parkingLocation/provider").NextSibling.SelectSingleNode("parkInfo/geoLocationFile").LastChild;
+            geoLocationBOT = xmlLocationBOT.OuterXml;
+        }
+
+        private void timerDLL_Tick(object sender, EventArgs e)
+        {
+            dll = new ParkingSensorNodeDll.ParkingSensorNodeDll();
+            dll.Initialize(DataFromDLL, 3000);
+
+        }
+
+        public void DataFromDLL(string str)
+        {
+            this.BeginInvoke((MethodInvoker)delegate
+            {
+
+                string leituraDoExcell = ReadFromExcelFile(AppDomain.CurrentDomain.BaseDirectory + geoLocationDLL);
+                string[] baseString = str.Split(';');
+
+
+                for (int i = 0; i < numParkingSpotsDLL; i++)
+                {
+                    XmlDocument doc = new XmlDocument();
+
+                    XmlElement parkingSpot = doc.CreateElement("parkingSpot");
+                    doc.AppendChild(parkingSpot);
+
+                    XmlElement idSpot = doc.CreateElement("id");
+                    idSpot.InnerText = parkId;
+
+                    XmlElement typeSpot = doc.CreateElement("type");
+                    typeSpot.InnerText = "Parking spot";
+
+                    XmlElement nameSpot = doc.CreateElement("name");
+                    nameSpot.InnerText = spotsId[i];
+
+                    XmlElement locationSpot = doc.CreateElement("location");
+                    locationSpot.InnerText = spotLocation[i];
+
+                    XmlElement statusSpot = doc.CreateElement("status");
+
+                    XmlElement valueSpot = doc.CreateElement("value");
+                    valueSpot.InnerText = Int32.Parse(baseString[3]) == 0 ? "free" : "occupied";
+
+
+                    XmlElement timestamp = doc.CreateElement("timestamp");
+                    timestamp.InnerText = baseString[2];
+
+                    XmlElement batteryStatus = doc.CreateElement("batteryStatus");
+                    batteryStatus.InnerText = baseString[4];
+
+
+                    parkingSpot.AppendChild(idSpot);
+                    parkingSpot.AppendChild(typeSpot);
+                    parkingSpot.AppendChild(nameSpot);
+                    parkingSpot.AppendChild(locationSpot);
+                    statusSpot.AppendChild(valueSpot);
+                    statusSpot.AppendChild(timestamp);
+                    parkingSpot.AppendChild(statusSpot);
+                    parkingSpot.AppendChild(batteryStatus);
+
+                    richTextBoxSpotsDLL.AppendText(parkingSpot.OuterXml + "\n");
+
+
+                }
+
+            });
         }
 
         private static void ReleaseCOMObject(object obj)
@@ -132,25 +159,24 @@ namespace ParkDace
         {
             BotSpotSensor.ServiceBot_SpotSensorClient service = new BotSpotSensor.ServiceBot_SpotSensorClient();
             
-            string path = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
-            string leituraDoExcell = ReadFromExcelFile(path + "Park_GeoLocation_Template");
-
-            XmlDocument parkWithSpots = new XmlDocument();
+            string leituraDoExcell = ReadFromExcelFile(AppDomain.CurrentDomain.BaseDirectory + geoLocationBOT);
 
             for (int i = 0; i < numParkingSpotsBOT; i++)
             {
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(service.CreateSensorDataXML());
-                
+
+                XmlNode id = doc.SelectSingleNode("parkingSpot/id");
+                id.InnerText = parkId;
                 XmlNode name = doc.SelectSingleNode("parkingSpot/name");
                 name.InnerText = spotsId[i];
                 XmlNode location = doc.SelectSingleNode("parkingSpot/location");
                 location.InnerText = spotLocation[i];
 
-                parkWithSpots.AppendChild(doc);
+                richTextBoxSpotsBot.AppendText(doc.OuterXml + "\n");
+
             }
 
-            int x = 0;
         }
     }
 }
