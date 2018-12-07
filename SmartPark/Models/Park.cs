@@ -11,6 +11,5 @@ namespace SmartPark.Models
 
         public string Name { get; set; }
 
-        public List<Spots> spots { get; set; }
     }
 }

@@ -9,20 +9,16 @@ using System.Web.Http;
 
 namespace SmartPark.Controllers
 {
+    [RoutePrefix("api/parks")]
     public class ParksController : ApiController
     {
-        //depois buscar lista de spots da base dados
-        /*List<ParkingSpot> spots = new List<ParkingSpot>
-        {
-            new ParkingSpot {Id = 0, BatteryStatus = 1, Location = "ali", Name = "spot1", Timestamp= DateTime.Now, Value="12"},
-            new ParkingSpot {Id = 1, BatteryStatus = 1, Location = "acola", Name = "spot2", Timestamp= DateTime.Now, Value="15"}
-        };*/
-
+    
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SmartPark.Properties.Settings.ConnString"].ConnectionString;
 
         // GET: api/Parks
         //1. List of available parks in the platform
-        public IEnumerable<Park> Get()
+        [Route("")]
+        public IEnumerable<Park> GetParks()
         {
             List<Park> parks = new List<Park>();
             SqlConnection conn = new SqlConnection(connectionString);
@@ -55,6 +51,43 @@ namespace SmartPark.Controllers
         }
 
         //2. Status of all parking spots in a specific park for a given moment
+        //GET: api/parks/1/spots
+        [Route("{id:int}/spots")]
+        public IEnumerable<Spots> GetStatusOfAllSpotsFromPark(int id)
+        {
+            List<Spots> spots = new List<Spots>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select id,name,value,timestamp From Spots Where idPark=@id", conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Spots s = new Spots
+                    {
+                        Id = (int)reader["Id"],
+                        Name = (string)reader["Name"],
+                        Value = (string)reader["Value"],
+                        Timestamp = (DateTime)reader["Timestamp"]
+
+                    };
+                    spots.Add(s);
+                }
+                reader.Close();
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return spots;
+        }
 
 
         //3. List of status of all parking spots in a specific park for a given time period
@@ -63,10 +96,12 @@ namespace SmartPark.Controllers
         //4. List of free parking spots from a specific park for a given moment
 
 
-        
+
 
         //6. Detailed information about a specific park
-        public IHttpActionResult Get(int id)
+        // GET api/parks/1
+        [Route("{id:int}")]
+        public IHttpActionResult GetPark(int id)
         {
             SqlConnection conn = null;
             Park p = null;
@@ -105,7 +140,7 @@ namespace SmartPark.Controllers
         //7. Detailed information about a specific parking spot in a given moment (should also indicated if the spot is free or occupied)
         
         
-
+    
 
     }
 }
