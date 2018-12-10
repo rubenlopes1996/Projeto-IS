@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace SmartPark.Controllers
@@ -50,34 +51,86 @@ namespace SmartPark.Controllers
             return parks;
         }
 
-        //2. Status of all parking spots in a specific park for a given moment
-        //GET: api/parks/1/spots
-        [Route("{id:int}/spots")]
-        public IEnumerable<Spots> GetStatusOfAllSpotsFromPark(int id)
+        //3. List of status of all parking spots in a specific park for a given time period
+        [Route("{íd}/{startDate}/{finalDate}")]
+        public IEnumerable<Spots> GetSpotByParkAndGivenTime(string id, string startDate, string finalDate)
         {
-            List<Spots> spots = new List<Spots>();
-            SqlConnection conn = new SqlConnection(connectionString);
+            SqlConnection conn = null;
+            List<Spots> spots = null;
+
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select id,name,value,timestamp From Spots Where idPark=@id", conn);
+                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where idPark=@id And hs.timestamp Between @startDate And @endDate", conn);
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@startDate", startDate);
+                cmd.Parameters.AddWithValue("@endDate", finalDate);
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Spots s = new Spots
                     {
-                        Id = (int)reader["Id"],
+                        Id = (string)reader["Id"],
                         Name = (string)reader["Name"],
+                        BatteryStatus = (int)reader["BatteryStatus"],
+                        Type = (string)reader["Type"],
                         Value = (string)reader["Value"],
-                        Timestamp = (DateTime)reader["Timestamp"]
+                        Timestamp = (DateTime)reader["Timestamp"],
+                        Latitude = (string)reader["GeoLatitude"],
+                        Longitude = (string)reader["GeoLongitude"]
+
 
                     };
                     spots.Add(s);
                 }
                 reader.Close();
                 conn.Close();
+            }
+            catch(Exception e)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return spots;
+        }
 
+        //4. List of free parking spots from a specific park for a given moment
+        [Route("free/{íd}/{timestamp}")]
+        public IEnumerable<Spots> GetFreeSpotsByParkAndGivenTime(string id, string timestamp)
+        {
+            SqlConnection conn = null;
+            List<Spots> spots = null;
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where idPark=@id And hs.timestamp = @time And hs.value = free", conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@time", timestamp);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Spots s = new Spots
+                    {
+                        Id = (string)reader["Id"],
+                        Name = (string)reader["Name"],
+                        BatteryStatus = (int)reader["BatteryStatus"],
+                        Type = (string)reader["Type"],
+                        Value = (string)reader["Value"],
+                        Timestamp = (DateTime)reader["Timestamp"],
+                        Latitude = (string)reader["GeoLatitude"],
+                        Longitude = (string)reader["GeoLongitude"]
+
+
+                    };
+                    spots.Add(s);
+                }
+                reader.Close();
+                conn.Close();
             }
             catch (Exception e)
             {
@@ -88,14 +141,6 @@ namespace SmartPark.Controllers
             }
             return spots;
         }
-
-
-        //3. List of status of all parking spots in a specific park for a given time period
-
-
-        //4. List of free parking spots from a specific park for a given moment
-
-
 
 
         //6. Detailed information about a specific park
@@ -137,7 +182,6 @@ namespace SmartPark.Controllers
             return Ok(p);
         }
 
-        //7. Detailed information about a specific parking spot in a given moment (should also indicated if the spot is free or occupied)
         
         
     
