@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkDace", "ParkDace\ParkDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark", "SmartPark\SmartPark.csproj", "{FF571A02-2EF9-4503-92C0-5A81324778EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkSS", "ParkSS\ParkSS.csproj", "{D2B315E0-66DE-4763-B932-BA03073365BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{FF571A02-2EF9-4503-92C0-5A81324778EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF571A02-2EF9-4503-92C0-5A81324778EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF571A02-2EF9-4503-92C0-5A81324778EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B315E0-66DE-4763-B932-BA03073365BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B315E0-66DE-4763-B932-BA03073365BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B315E0-66DE-4763-B932-BA03073365BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B315E0-66DE-4763-B932-BA03073365BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

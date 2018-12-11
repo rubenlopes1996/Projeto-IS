@@ -23,3 +23,5 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-S
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CopyComplete
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).dll
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).pdb
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.dll
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.pdb

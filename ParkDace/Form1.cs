@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using uPLibrary.Networking.M2Mqtt;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ParkDace
@@ -12,9 +14,14 @@ namespace ParkDace
         private static string parkId;
         private static string geoLocationBOT, geoLocationDLL;
         ParkingSensorNodeDll.ParkingSensorNodeDll dll = null;
+        MqttClient client = new MqttClient("127.0.0.1"); //ficheuri de config
+        string[] topics = { "Data" };
+
+
 
         public Form1()
         {
+            client.Connect(Guid.NewGuid().ToString());
             InitializeComponent();
         }
 
@@ -130,8 +137,20 @@ namespace ParkDace
 
                     richTextBoxSpotsDLL.AppendText(parkingSpot.OuterXml + "\n");
 
+                    if (!client.IsConnected)
+                    {
+                        MessageBox.Show("Unable to connect with broker");
+                    }
+                    else
+                    {
+                        string topic = topics[0];
+                        byte[] msg = Encoding.UTF8.GetBytes(parkingSpot.OuterXml);
 
+                        client.Publish(topic, msg);
+                    }
                 }
+                
+                
 
             });
         }
@@ -174,6 +193,18 @@ namespace ParkDace
                 location.InnerText = spotLocation[i];
 
                 richTextBoxSpotsBot.AppendText(doc.OuterXml + "\n");
+
+                if (!client.IsConnected)
+                {
+                    MessageBox.Show("Unable to connect with broker");
+                }
+                else
+                {
+                    string topic = topics[0];
+                    byte[] msg = Encoding.UTF8.GetBytes(doc.OuterXml);
+
+                    client.Publish(topic, msg);
+                }
 
             }
 

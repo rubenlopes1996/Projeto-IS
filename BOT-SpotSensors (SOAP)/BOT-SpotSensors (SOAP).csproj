@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="M2Mqtt.Net, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\M2Mqtt.4.3.0.0\lib\net45\M2Mqtt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ParkingSensorNodeDll">
       <HintPath>\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto\BOT-SpotSensors (SOAP) - Solution\BOT-SpotSensors (SOAP)\DLL\ParkingSensorNodeDll.dll</HintPath>
@@ -78,6 +81,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

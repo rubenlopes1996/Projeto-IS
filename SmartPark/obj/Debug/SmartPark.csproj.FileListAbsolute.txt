@@ -126,3 +126,5 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\SmartPark\obj\Debug\SmartPark.pdb
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\SmartPark\obj\Debug\SmartPark.csproj.CopyComplete
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\SmartPark\obj\Debug\SmartPark.dll
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\SmartPark\obj\Debug\SmartPark.pdb
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\SmartPark\bin\M2Mqtt.Net.dll
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\SmartPark\bin\M2Mqtt.Net.pdb
