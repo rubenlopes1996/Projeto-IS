@@ -32,7 +32,7 @@ namespace SmartPark.Controllers
                 {
                     Park p = new Park
                     {
-                        Id = (int)reader["Id"],
+                        //Id = (int)reader["Id"],
                         Name = (string)reader["Name"]
                     };
                     parks.Add(p);
@@ -163,7 +163,7 @@ namespace SmartPark.Controllers
                 {
                     p = new Park
                     {
-                        Id = (int)reader["Id"],
+                        //Id = (int)reader["Id"],
                         Name = (string)reader["Name"]
                     };
                 }

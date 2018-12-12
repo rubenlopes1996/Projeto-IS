@@ -54,19 +54,29 @@ namespace SmartPark.Controllers
             return spots;
         }
 
-        //2. Status of all parking spots in a specific park for a given moment
-        [Route("{íd}/{timestamp}")]
-        public IEnumerable<Spots> GetSpotByParkAndGivenTime(string id, string timestamp)
-        {
-            SqlConnection conn = null;
-            List<Spots> spots = null;
+       
 
+        //2. Status of all parking spots in a specific park for a given moment
+        [Route("{nameOfPark}/date/{pubdate:datetime}")]
+        public IEnumerable<Spots> GetSpotByParkAndGivenTime(string nameOfPark, DateTime pubdate)
+        {
+            SqlConnection conn = new SqlConnection(connectionString); ;
+            List<Spots> spots = new List<Spots>();
+            //2018-12-12T16:11:14 
+            //api/spots/campus_2_A_Park1/date/2018-12-12T16:11:14
+            //alterar algum valor nessa data já nao encontra
+            //era suposto dar com estes tbm
+            //Wed, 12 Dec 2018
+            //12 / 12 / 2018 16:11:14
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where idPark=@id And hs.timestamp=@date", conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@date", timestamp);
+                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.type, s.value, s.batterystatus, s.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@parksName And hs.timestamp = @date", conn);
+                //DbFunctions.TruncateTime(hs.timestamp) = DbFunctions.TruncateTime(@date)
+                //SqlCommand cmd = new SqlCommand("Select * from History_Spots Where timestamp = @date", conn);
+
+                cmd.Parameters.AddWithValue("@parksName", nameOfPark);
+                cmd.Parameters.AddWithValue("@date", pubdate);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -81,8 +91,6 @@ namespace SmartPark.Controllers
                         Timestamp = (DateTime)reader["Timestamp"],
                         Latitude = (string)reader["GeoLatitude"],
                         Longitude = (string)reader["GeoLongitude"]
-
-
                     };
                     spots.Add(s);
                 }
@@ -101,16 +109,16 @@ namespace SmartPark.Controllers
 
 
         //5. List of parking spots belonging to a specific park
-        [Route("parks/{id:int}")]
-        public IEnumerable<Spots> Get(int id)
+        [Route("parks/{nameOfPark}")]
+        public IEnumerable<Spots> Get(string nameOfPark)
         {
            List<Spots> spots = new List<Spots>();
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Spots Where idPark=@id", conn);
-                cmd.Parameters.AddWithValue("@id", id);
+                SqlCommand cmd = new SqlCommand("Select * From Spots Where id=@namePark", conn);
+                cmd.Parameters.AddWithValue("@namePark", nameOfPark);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -241,9 +249,9 @@ namespace SmartPark.Controllers
             return spots;
         }
 
-        [Route("park/{id:int}/needReplace")]
+        [Route("park/{nameOfPark}/needReplace")]
         //9. List of parking spots sensors that need to be replaced for a specific park
-        public IEnumerable<Spots> GetSpotNeedReplaceByPark(int id)
+        public IEnumerable<Spots> GetSpotNeedReplaceByPark(string nameOfPark)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             List<Spots> spots = new List<Spots>();
@@ -251,10 +259,8 @@ namespace SmartPark.Controllers
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("Select s.name, s.type,s.value,s.timestamp,s.batterystatus,s.id, s.geoLatitude, s.geoLongitude From Spots s Join Parks p on(p.Id=s.IdPark) Where s.IdPark=1 And s.batterystatus=1");
-                cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("@idpark", id);
-
+                SqlCommand cmd = new SqlCommand("Select s.name, s.type,s.value,s.timestamp,s.batterystatus,s.id, s.geoLatitude, s.geoLongitude From Spots s Join Parks p on(p.name=s.id) Where s.id=@parksName And s.batterystatus=1", conn);
+                cmd.Parameters.AddWithValue("@parksName", nameOfPark);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -286,9 +292,9 @@ namespace SmartPark.Controllers
             return spots;
         }
 
-        [Route("park/{id:int}/occupancyRate")]
+        [Route("park/{nameOfPark}/occupancyRate")]
         //10. Instant occupancy rate in a specific park
-        public IHttpActionResult GetOccupancyRate(int id)
+        public IHttpActionResult GetOccupancyRate(string nameOfPark)
         {
             Spots s = null;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -298,9 +304,9 @@ namespace SmartPark.Controllers
                 conn.Open();
 
 
-                SqlCommand cmd = new SqlCommand("Select s.name, s.type,s.value,s.timestamp,s.batterystatus,s.id, s.geoLatitude, s.geoLongitude From Spots s join Parks p on(p.id=s.IdPark) Where s.IdPark=@idpark");
+                SqlCommand cmd = new SqlCommand("Select s.name, s.type, s.value, s.timestamp, s.batterystatus, s.id, s.geoLatitude, s.geoLongitude From Spots s Join Parks p on(p.name = s.id) Where s.id = @parksName");
                 cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("@idpark", id);
+                cmd.Parameters.AddWithValue("@parksName", nameOfPark);
 
 
                 SqlDataReader reader = cmd.ExecuteReader();
