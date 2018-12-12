@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Xml;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace ParkSS
 {
@@ -14,15 +16,17 @@ namespace ParkSS
     class Program
     {
         private static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ParkSS.Properties.Settings.ConnectionString"].ConnectionString;
+        private static string ip;
 
 
         static void Main(string[] args)
         {
+            ReadFromExcel(AppDomain.CurrentDomain.BaseDirectory + "FicheiroConfBroker.xlsx");
 
             MqttClient client = null;
             string[] topics = { "Data" };
 
-            client = new MqttClient("127.0.0.1");
+            client = new MqttClient(ip);
             client.Connect(Guid.NewGuid().ToString());
             if (!client.IsConnected)
             {
@@ -117,6 +121,49 @@ namespace ParkSS
         
 
 
+        }
+
+        private static void ReadFromExcel(string filename)
+        {
+
+            //Criar App do excell
+            string result = "";
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = false;
+
+            //Abre a folha do excel
+            Excel.Workbook workbook = excelApp.Workbooks.Open(filename);
+            Excel.Worksheet sheet1 = workbook.ActiveSheet;
+
+            ip = (sheet1.Cells[1, 2] as Excel.Range).Value;
+
+            //Fechar o excell
+            workbook.Close();
+            excelApp.Quit();
+
+            //Limpa a memória, os objetos (como se fosse o "gestor de tarefas")
+            ReleaseCOMObject(sheet1);
+            ReleaseCOMObject(workbook);
+            ReleaseCOMObject(excelApp);
+
+        }
+        private static void ReleaseCOMObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+
+                obj = null;
+                System.Diagnostics.Debug.WriteLine("Error releasing COM object " + ex.Message);
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
 }

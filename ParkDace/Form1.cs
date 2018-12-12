@@ -13,14 +13,39 @@ namespace ParkDace
         private static int numParkingSpotsDLL=15, numParkingSpotsBOT=10;
         private static string parkId;
         private static string geoLocationBOT, geoLocationDLL;
+        private static string ip;
         ParkingSensorNodeDll.ParkingSensorNodeDll dll = null;
-        MqttClient client = new MqttClient("127.0.0.1"); //ficheiro de config
+        MqttClient client; 
         string[] topics = { "Data" };
 
         public Form1()
         {
-            client.Connect(Guid.NewGuid().ToString());
             InitializeComponent();
+        }
+
+        private static void ReadFromExcel(string filename)
+        {
+
+            //Criar App do excell
+            string result = "";
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = false;
+
+            //Abre a folha do excel
+            Excel.Workbook workbook = excelApp.Workbooks.Open(filename);
+            Excel.Worksheet sheet1 = workbook.ActiveSheet;
+
+            ip = (sheet1.Cells[1, 2] as Excel.Range).Value;
+
+            //Fechar o excell
+            workbook.Close();
+            excelApp.Quit();
+
+            //Limpa a memória, os objetos (como se fosse o "gestor de tarefas")
+            ReleaseCOMObject(sheet1);
+            ReleaseCOMObject(workbook);
+            ReleaseCOMObject(excelApp);
+
         }
 
         private static string ReadFromExcelFile(string filename)
@@ -75,6 +100,10 @@ namespace ParkDace
 
         private void btnStartDataAcquisition_Click(object sender, EventArgs e)
         {
+            ReadFromExcel(AppDomain.CurrentDomain.BaseDirectory + "FicheiroConfBroker.xlsx");
+            client = new MqttClient(ip);
+            client.Connect(Guid.NewGuid().ToString());
+
             timerBot.Enabled = true;
             timerDLL.Enabled = true;
 

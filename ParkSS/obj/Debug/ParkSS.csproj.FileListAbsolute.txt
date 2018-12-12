@@ -8,3 +8,4 @@
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.csproj.CopyComplete
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.exe
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.pdb
+\\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.csproj.ResolveComReference.cache
