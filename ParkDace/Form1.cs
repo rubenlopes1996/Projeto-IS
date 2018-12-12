@@ -17,8 +17,6 @@ namespace ParkDace
         MqttClient client = new MqttClient("127.0.0.1"); //ficheuri de config
         string[] topics = { "Data" };
 
-
-
         public Form1()
         {
             client.Connect(Guid.NewGuid().ToString());
@@ -82,6 +80,11 @@ namespace ParkDace
         {
             dll = new ParkingSensorNodeDll.ParkingSensorNodeDll();
             dll.Initialize(DataFromDLL, 3000);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 

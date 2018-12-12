@@ -26,8 +26,10 @@ namespace SmartPark.Controllers
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Parks", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
+                //SqlCommand cmd = new SqlCommand("Select * From Parks", conn);
+                SqlCommand cmd = new SqlCommand("Insert Into Parks (Id, Name) Values (3, 'Campus-Park')", conn);
+
+/*                SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Park p = new Park
@@ -37,7 +39,7 @@ namespace SmartPark.Controllers
                     };
                     parks.Add(p);
                 }
-                reader.Close();
+                reader.Close();*/
                 conn.Close();
 
             }
