@@ -9,12 +9,12 @@ namespace ParkDace
 {
     public partial class Form1 : Form
     {
-        private static string[] spotsId, spotLocation;
+        private static string[] spotsIdDLL, spotLocationDLL, spotsIdBOT, spotLocationBOT;
         private static int numParkingSpotsDLL=15, numParkingSpotsBOT=10;
         private static string parkId;
         private static string geoLocationBOT, geoLocationDLL;
         ParkingSensorNodeDll.ParkingSensorNodeDll dll = null;
-        MqttClient client = new MqttClient("127.0.0.1"); //ficheuri de config
+        MqttClient client = new MqttClient("127.0.0.1"); //ficheiro de config
         string[] topics = { "Data" };
 
         public Form1()
@@ -36,19 +36,31 @@ namespace ParkDace
 
             parkId = (sheet1.Cells[1, 2] as Excel.Range).Value;
 
-            spotsId = new string[numParkingSpotsDLL];
-            spotLocation = new string[numParkingSpotsDLL];
+            spotsIdDLL = new string[numParkingSpotsDLL];
+            spotLocationDLL = new string[numParkingSpotsDLL];
+
+            for (int i = 0; i < numParkingSpotsDLL; i++)
+            {
+                spotsIdDLL[i] = (string)(sheet1.Cells[i+6, 1] as Excel.Range).Value;
+            }
+
+            for (int j = 0; j < numParkingSpotsDLL; j++)
+            {
+                spotLocationDLL[j] = (string)(sheet1.Cells[j+6,2] as Excel.Range).Value;
+            }
+
+            spotsIdBOT = new string[numParkingSpotsBOT];
+            spotLocationBOT = new string[numParkingSpotsBOT];
 
             for (int i = 0; i < numParkingSpotsBOT; i++)
             {
-                spotsId[i] = (string)(sheet1.Cells[i+6, 1] as Excel.Range).Value;
+                spotsIdBOT[i] = (string)(sheet1.Cells[i + 6, 1] as Excel.Range).Value;
             }
 
             for (int j = 0; j < numParkingSpotsBOT; j++)
             {
-                spotLocation[j] = (string)(sheet1.Cells[j+6,2] as Excel.Range).Value;
+                spotLocationBOT[j] = (string)(sheet1.Cells[j + 6, 2] as Excel.Range).Value;
             }
-
             //Fechar o excell
             workbook.Close();
             excelApp.Quit();
@@ -111,10 +123,10 @@ namespace ParkDace
                     typeSpot.InnerText = "Parking spot";
 
                     XmlElement nameSpot = doc.CreateElement("name");
-                    nameSpot.InnerText = spotsId[i];
+                    nameSpot.InnerText = spotsIdDLL[i];
 
                     XmlElement locationSpot = doc.CreateElement("location");
-                    locationSpot.InnerText = spotLocation[i];
+                    locationSpot.InnerText = spotLocationDLL[i];
 
                     XmlElement statusSpot = doc.CreateElement("status");
 
@@ -191,9 +203,9 @@ namespace ParkDace
                 XmlNode id = doc.SelectSingleNode("parkingSpot/id");
                 id.InnerText = parkId;
                 XmlNode name = doc.SelectSingleNode("parkingSpot/name");
-                name.InnerText = spotsId[i];
+                name.InnerText = spotsIdBOT[i];
                 XmlNode location = doc.SelectSingleNode("parkingSpot/location");
-                location.InnerText = spotLocation[i];
+                location.InnerText = spotLocationBOT[i];
 
                 richTextBoxSpotsBot.AppendText(doc.OuterXml + "\n");
 

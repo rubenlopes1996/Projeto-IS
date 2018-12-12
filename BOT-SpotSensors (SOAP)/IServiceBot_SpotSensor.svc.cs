@@ -95,11 +95,6 @@ namespace BOT_SpotSensors__SOAP_
             parkingSpot.AppendChild(statusSpot);
             parkingSpot.AppendChild(batteryStatus);
 
-
-
-
-            
-
             return doc.OuterXml;
 
 

@@ -45,14 +45,14 @@ namespace ParkSS
             string data = Encoding.UTF8.GetString(e.Message);
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(data);
-            Console.WriteLine(data);
+            Console.WriteLine("Receving data");
             string id = doc.SelectSingleNode("parkingSpot/id").InnerText;
             string name = doc.SelectSingleNode("parkingSpot/name").InnerText;
             string type = doc.SelectSingleNode("parkingSpot/type").InnerText;
             string location = doc.SelectSingleNode("parkingSpot/location").InnerText;
-            /*string[] locationArray = location.Split(',');
+            string[] locationArray = location.Split(',');
             string geoLatitude = locationArray[0];
-            string geoLongitude = locationArray[1];*/
+            string geoLongitude = locationArray[1];
             string value = doc.SelectSingleNode("parkingSpot/status/value").InnerText;
             string timeStamp = doc.SelectSingleNode("parkingSpot/status/timestamp").InnerText;
             DateTime enteredDate = DateTime.Parse(timeStamp);
@@ -63,21 +63,58 @@ namespace ParkSS
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Insert Into dbo.History_Spots (idSpot, value) Values ('A-2', 'free')", conn);
-                cmd.Parameters.AddWithValue("@idSpot", name);
-                cmd.Parameters.AddWithValue("@value", value);
-                //cmd.Parameters.AddWithValue("@timestamp", enteredDate);
+                SqlCommand cmdHistory = new SqlCommand("Insert Into dbo.History_Spots (idSpot, value, timestamp) Values (@idSpot, @value, @timestamp)", conn);
+
+                cmdHistory.Parameters.AddWithValue("@idSpot", name);
+                cmdHistory.Parameters.AddWithValue("@value", value);
+                cmdHistory.Parameters.AddWithValue("@timestamp", enteredDate);
+                cmdHistory.ExecuteNonQuery();
+
+                SqlCommand cmdSpots = new SqlCommand("Update dbo.Spots Set value = @value, batteryStatus=@batteryStatus, timestamp=@timestamp Where name=@name", conn);
+                cmdSpots.Parameters.AddWithValue("@name", name);
+                cmdSpots.Parameters.AddWithValue("@value", value);
+                cmdSpots.Parameters.AddWithValue("@batteryStatus", batteryStatus);
+                cmdSpots.Parameters.AddWithValue("@timestamp", enteredDate);
+                cmdSpots.ExecuteNonQuery();
 
                 conn.Close();
 
             }
-            catch (Exception )
+            catch (Exception exception)
             {
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
                     conn.Close();
                 }
             }
+
+          //Caso seja preciso criar os primeiros dados na tabela de Spots
+            /*SqlConnection conn2 = new SqlConnection(connectionString);
+
+            try
+            {
+                conn2.Open();
+                SqlCommand cmdSpots = new SqlCommand("Insert Into dbo.Spots (name, type, value, timestamp, batteryStatus,id,geoLatitude,geoLongitude) Values (@name, @type, @value, @timestamp, @batteryStatus, @id, @geoLatitude, @geoLongitude)", conn2);
+
+                cmdSpots.Parameters.AddWithValue("@name", name);
+                cmdSpots.Parameters.AddWithValue("@type", type);
+                cmdSpots.Parameters.AddWithValue("@value", value);
+                cmdSpots.Parameters.AddWithValue("@batteryStatus", batteryStatus);
+                cmdSpots.Parameters.AddWithValue("@timestamp", enteredDate);
+                cmdSpots.Parameters.AddWithValue("@geoLatitude", geoLatitude);
+                cmdSpots.Parameters.AddWithValue("@geoLongitude", geoLongitude);
+                cmdSpots.Parameters.AddWithValue("@id", id);
+               
+                cmdSpots.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                if (conn2.State == System.Data.ConnectionState.Open)
+                {
+                    conn2.Close();
+                }
+            }*/
+        
 
 
         }

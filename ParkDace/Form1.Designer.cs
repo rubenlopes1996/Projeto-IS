@@ -34,6 +34,8 @@
             this.timerDLL = new System.Windows.Forms.Timer(this.components);
             this.richTextBoxSpotsDLL = new System.Windows.Forms.RichTextBox();
             this.richTextBoxSpotsBot = new System.Windows.Forms.RichTextBox();
+            this.BOT = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timerBot
@@ -58,7 +60,7 @@
             // 
             // richTextBoxSpotsDLL
             // 
-            this.richTextBoxSpotsDLL.Location = new System.Drawing.Point(12, 12);
+            this.richTextBoxSpotsDLL.Location = new System.Drawing.Point(12, 40);
             this.richTextBoxSpotsDLL.Name = "richTextBoxSpotsDLL";
             this.richTextBoxSpotsDLL.Size = new System.Drawing.Size(381, 251);
             this.richTextBoxSpotsDLL.TabIndex = 1;
@@ -66,18 +68,38 @@
             // 
             // richTextBoxSpotsBot
             // 
-            this.richTextBoxSpotsBot.Location = new System.Drawing.Point(399, 12);
+            this.richTextBoxSpotsBot.Location = new System.Drawing.Point(399, 40);
             this.richTextBoxSpotsBot.Name = "richTextBoxSpotsBot";
             this.richTextBoxSpotsBot.Size = new System.Drawing.Size(389, 251);
             this.richTextBoxSpotsBot.TabIndex = 2;
             this.richTextBoxSpotsBot.Tag = "";
             this.richTextBoxSpotsBot.Text = "";
             // 
+            // BOT
+            // 
+            this.BOT.AutoSize = true;
+            this.BOT.Location = new System.Drawing.Point(407, 20);
+            this.BOT.Name = "BOT";
+            this.BOT.Size = new System.Drawing.Size(37, 17);
+            this.BOT.TabIndex = 3;
+            this.BOT.Text = "BOT";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "DLL";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BOT);
             this.Controls.Add(this.richTextBoxSpotsBot);
             this.Controls.Add(this.richTextBoxSpotsDLL);
             this.Controls.Add(this.btnStartDataAcquisition);
@@ -86,6 +108,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +118,8 @@
         private System.Windows.Forms.Timer timerDLL;
         private System.Windows.Forms.RichTextBox richTextBoxSpotsDLL;
         private System.Windows.Forms.RichTextBox richTextBoxSpotsBot;
+        private System.Windows.Forms.Label BOT;
+        private System.Windows.Forms.Label label2;
     }
 }
 

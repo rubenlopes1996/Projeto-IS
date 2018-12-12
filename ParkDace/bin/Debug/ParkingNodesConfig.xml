@@ -18,7 +18,7 @@
             <id>Campus_2_B_Park2</id>
             <description>Parking between the A and the B building</description>
             <numberOfSpots>10</numberOfSpots>
-            <operatingHours>Never closes</operatingHours>
+            <operatingHours>Always open</operatingHours>
             <numberOfSpecialSpots>1</numberOfSpecialSpots>
             <geoLocationFile>Campus_2_B_Park2.xlsx</geoLocationFile>
         </parkInfo>
