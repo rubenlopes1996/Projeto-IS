@@ -35,7 +35,8 @@ namespace SmartPark.Controllers
                         NumberOfSpots = (int)reader["NumberOfSpots"],
                         NumberOfSpecialSpots = (int)reader["NumberOfSpecialSpots"],
                         operationHours = (string)reader["operationHours"],
-                        Name = (string)reader["Name"]
+                        Name = (string)reader["Name"],
+                        Description = (string)reader["Description"]
                     };
                     parks.Add(p);
                 }
@@ -164,11 +165,12 @@ namespace SmartPark.Controllers
                 {
                     p = new Park
                     {
-                        Name = (string)reader["Name"],
                         NumberOfSpots = (int)reader["NumberOfSpots"],
                         NumberOfSpecialSpots = (int)reader["NumberOfSpecialSpots"],
-                        operationHours = (string)reader["operationHours"]
-                        
+                        operationHours = (string)reader["operationHours"],
+                        Name = (string)reader["Name"],
+                        Description = (string)reader["Description"]
+
                     };
                 }
                 reader.Close();
