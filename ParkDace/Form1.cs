@@ -10,13 +10,13 @@ namespace ParkDace
     public partial class Form1 : Form
     {
         private static string[] spotsIdDLL, spotLocationDLL, spotsIdBOT, spotLocationBOT;
-        private static int numParkingSpotsDLL=15, numParkingSpotsBOT=10;
+        private static int numParkingSpotsDLL = 15, numParkingSpotsBOT = 10;
         private static string parkId;
-        private static string geoLocationBOT, geoLocationDLL;
+        private static string geoLocationBOT, geoLocationDLL, idPark;
         private static string ip;
         ParkingSensorNodeDll.ParkingSensorNodeDll dll = null;
-        MqttClient client; 
-        string[] topics = { "Data" };
+        MqttClient client;
+        string[] topics = { "Data", "Parks" };
 
         public Form1()
         {
@@ -66,12 +66,12 @@ namespace ParkDace
 
             for (int i = 0; i < numParkingSpotsDLL; i++)
             {
-                spotsIdDLL[i] = (string)(sheet1.Cells[i+6, 1] as Excel.Range).Value;
+                spotsIdDLL[i] = (string)(sheet1.Cells[i + 6, 1] as Excel.Range).Value;
             }
 
             for (int j = 0; j < numParkingSpotsDLL; j++)
             {
-                spotLocationDLL[j] = (string)(sheet1.Cells[j+6,2] as Excel.Range).Value;
+                spotLocationDLL[j] = (string)(sheet1.Cells[j + 6, 2] as Excel.Range).Value;
             }
 
             spotsIdBOT = new string[numParkingSpotsBOT];
@@ -115,6 +115,18 @@ namespace ParkDace
 
             XmlNode xmlLocationBOT = document.SelectSingleNode("parkingLocation/provider").NextSibling.SelectSingleNode("parkInfo/geoLocationFile").LastChild;
             geoLocationBOT = xmlLocationBOT.OuterXml;
+
+            if (!client.IsConnected)
+            {
+                MessageBox.Show("Unable to connect with broker");
+            }
+            else
+            {
+                string topic = topics[1];
+                byte[] msg = Encoding.UTF8.GetBytes(document.OuterXml);
+
+                client.Publish(topic, msg);
+            }
         }
 
         private void timerDLL_Tick(object sender, EventArgs e)
@@ -193,9 +205,6 @@ namespace ParkDace
                         client.Publish(topic, msg);
                     }
                 }
-                
-                
-
             });
         }
 
@@ -221,7 +230,7 @@ namespace ParkDace
         private void timer1_Tick(object sender, EventArgs e)
         {
             BotSpotSensor.ServiceBot_SpotSensorClient service = new BotSpotSensor.ServiceBot_SpotSensorClient();
-            
+
             string leituraDoExcell = ReadFromExcelFile(AppDomain.CurrentDomain.BaseDirectory + geoLocationBOT);
 
             for (int i = 0; i < numParkingSpotsBOT; i++)
@@ -249,9 +258,7 @@ namespace ParkDace
 
                     client.Publish(topic, msg);
                 }
-
             }
-
         }
     }
 }

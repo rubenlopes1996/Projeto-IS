@@ -9,3 +9,14 @@
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.exe
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.pdb
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkSS\obj\Debug\ParkSS.csproj.ResolveComReference.cache
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\bin\Debug\ParkSS.exe.config
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\bin\Debug\ParkSS.exe
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\bin\Debug\ParkSS.pdb
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\bin\Debug\M2Mqtt.Net.dll
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csprojAssemblyReference.cache
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.ResolveComReference.cache
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.CoreCompileInputs.cache
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.CopyComplete
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.exe
+C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.pdb
