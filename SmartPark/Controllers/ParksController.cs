@@ -13,7 +13,7 @@ namespace SmartPark.Controllers
     [RoutePrefix("api/parks")]
     public class ParksController : ApiController
     {
-    
+
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SmartPark.Properties.Settings.ConnString"].ConnectionString;
 
         // GET: api/Parks
@@ -32,7 +32,9 @@ namespace SmartPark.Controllers
                 {
                     Park p = new Park
                     {
-                        //Id = (int)reader["Id"],
+                        NumberOfSpots = (int)reader["NumberOfSpots"],
+                        NumberOfSpecialSpots = (int)reader["NumberOfSpecialSpots"],
+                        operationHours = (string)reader["operationHours"],
                         Name = (string)reader["Name"]
                     };
                     parks.Add(p);
@@ -52,16 +54,17 @@ namespace SmartPark.Controllers
         }
 
         //3. List of status of all parking spots in a specific park for a given time period
-        [Route("{íd}/{startDate}/{finalDate}")]
-        public IEnumerable<Spots> GetSpotByParkAndGivenTime(string id, string startDate, string finalDate)
+        [Route("{id}/startdate/{startDate:datetime}/finaldate/{finalDate:datetime}")]
+        public IEnumerable<Spots> GetSpotByParkAndGivenTime(string id, DateTime startDate, DateTime finalDate)
         {
-            SqlConnection conn = null;
-            List<Spots> spots = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            List<Spots> spots = new List<Spots>();
 
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where idPark=@id And hs.timestamp Between @startDate And @endDate", conn);
+                SqlCommand cmd = new SqlCommand("Select s.name, s.type, hs.value, hs.timestamp, s.id, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@id And hs.timestamp Between @startDate And @endDate", conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@startDate", startDate);
                 cmd.Parameters.AddWithValue("@endDate", finalDate);
@@ -73,7 +76,6 @@ namespace SmartPark.Controllers
                     {
                         Id = (string)reader["Id"],
                         Name = (string)reader["Name"],
-                        BatteryStatus = (int)reader["BatteryStatus"],
                         Type = (string)reader["Type"],
                         Value = (string)reader["Value"],
                         Timestamp = (DateTime)reader["Timestamp"],
@@ -87,7 +89,7 @@ namespace SmartPark.Controllers
                 reader.Close();
                 conn.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (conn.State == System.Data.ConnectionState.Open)
                 {
@@ -98,17 +100,17 @@ namespace SmartPark.Controllers
         }
 
         //4. List of free parking spots from a specific park for a given moment
-        [Route("free/{íd}/{timestamp}")]
-        public IEnumerable<Spots> GetFreeSpotsByParkAndGivenTime(string id, string timestamp)
+        [Route("free/{parksName}/date/{timestamp}")]
+        public IEnumerable<Spots> GetFreeSpotsByParkAndGivenTime(string parksName, DateTime timestamp)
         {
-            SqlConnection conn = null;
-            List<Spots> spots = null;
+            SqlConnection conn = new SqlConnection(connectionString);
+            List<Spots> spots = new List<Spots>();
 
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where idPark=@id And hs.timestamp = @time And hs.value = free", conn);
-                cmd.Parameters.AddWithValue("@id", id);
+                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.batteryStatus, s.type, s.value, s.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@nameOfPark And hs.timestamp = @time And hs.value = 'free'", conn);
+                cmd.Parameters.AddWithValue("@nameOfPark", parksName);
                 cmd.Parameters.AddWithValue("@time", timestamp);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -144,27 +146,29 @@ namespace SmartPark.Controllers
 
 
         //6. Detailed information about a specific park
-        // GET api/parks/1
-        [Route("{id:int}")]
-        public IHttpActionResult GetPark(int id)
+        [Route("{nameOfPark}")]
+        public IHttpActionResult GetPark(string nameOfPark)
         {
-            SqlConnection conn = null;
+            SqlConnection conn = new SqlConnection(connectionString);
             Park p = null;
             try
             {
                 conn = new SqlConnection(connectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "Select * From Parks Where Id=@idpark";
+                cmd.CommandText = "Select * From Parks Where name=@parksName";
+                cmd.Parameters.AddWithValue("@parksName", nameOfPark);
                 cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("@idpark", id);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     p = new Park
                     {
-                        //Id = (int)reader["Id"],
-                        Name = (string)reader["Name"]
+                        Name = (string)reader["Name"],
+                        NumberOfSpots = (int)reader["NumberOfSpots"],
+                        NumberOfSpecialSpots = (int)reader["NumberOfSpecialSpots"],
+                        operationHours = (string)reader["operationHours"]
+                        
                     };
                 }
                 reader.Close();
@@ -181,10 +185,5 @@ namespace SmartPark.Controllers
 
             return Ok(p);
         }
-
-        
-        
-    
-
     }
 }

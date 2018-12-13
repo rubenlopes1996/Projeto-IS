@@ -109,7 +109,7 @@ namespace SmartPark.Controllers
 
 
         //5. List of parking spots belonging to a specific park
-        [Route("parks/{nameOfPark}")]
+        [Route("park/{nameOfPark}")]
         public IEnumerable<Spots> Get(string nameOfPark)
         {
            List<Spots> spots = new List<Spots>();
@@ -152,32 +152,18 @@ namespace SmartPark.Controllers
             }
 
         //7. Detailed information about a specific parking spot in a given moment (should also indicated if the spot is free or occupied)
-        [Route("{name}/{timestamp}")]
-        public IEnumerable<Spots> GetSpotByGivenTime(string name, string timestamp)
+        [Route("{idSpot}/{timestamp}")]
+        public IEnumerable<Spots> GetSpotByGivenTime(string idSpot, DateTime timestamp)
         {
             List<Spots> spots = new List<Spots>();
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < timestamp.Length; i++)
-            {
-                if(i%2 == 0)
-                {
-                    sb.Append('-');
-                }
-                sb.Append(timestamp[i]);
-
-            }
-
-            string date = sb.ToString();
-            //DateTime formattedDate =  DateTime.ParseExact(date, "dd-mm-yy HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture);
 
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * From Spots s Join History_Spots hs ON(s.name = hs.idSpot) where s.name=@nameSpot And hs.timestamp=@timestamp ", conn);
-                //Select * From Spots s Join History_Spots hs ON(s.name = hs.idSpot) where hs.IdSpot ='A-1' AND hs.timestamp= '2018-12-10 00:00:00.000'
-                cmd.Parameters.AddWithValue("@nameSpot", name);
-                cmd.Parameters.AddWithValue("@timestamp", new DateTime(2018,10,12,12,59,00));
+                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.batteryStatus, s.type, s.value, s.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON(s.name = hs.idSpot) where s.name=@nameSpot And hs.timestamp=@timestamp ", conn);
+                cmd.Parameters.AddWithValue("@nameSpot", idSpot);
+                cmd.Parameters.AddWithValue("@timestamp", timestamp);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
