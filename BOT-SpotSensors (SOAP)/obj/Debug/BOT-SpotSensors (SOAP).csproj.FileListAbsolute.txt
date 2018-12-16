@@ -27,3 +27,12 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-S
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.pdb
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.dll
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll.config
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\bin\BOT-SpotSensors (SOAP).pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\bin\M2Mqtt.Net.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\BOT-SpotSensors (SOAP)\obj\Debug\BOT-SpotSensors (SOAP).pdb

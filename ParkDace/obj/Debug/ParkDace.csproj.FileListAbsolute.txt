@@ -28,3 +28,17 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.Res
 \\Mac\Home\Desktop\Escola\3ºAno\1ºSemestre\IS\Projeto IS\ParkDace\bin\Debug\M2Mqtt.Net.pdb
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\bin\Debug\M2Mqtt.Net.dll
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkDace\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\ParkDace.exe.config
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\ParkDace.exe
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\ParkDace.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\M2Mqtt.Net.dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\ParkingSensorNodeDll.dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.ResolveComReference.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.Form1.resources
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.Properties.Resources.resources
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.GenerateResource.Cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.exe
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkDace\obj\Debug\ParkDace.pdb

@@ -20,3 +20,13 @@ C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.CoreCom
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.CopyComplete
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.exe
 C:\Users\Tiago\Desktop\ESTG\IS\Projeto-IS\ParkSS\obj\Debug\ParkSS.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\bin\Debug\ParkSS.exe.config
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\bin\Debug\ParkSS.exe
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\bin\Debug\ParkSS.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\bin\Debug\M2Mqtt.Net.dll
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\bin\Debug\M2Mqtt.Net.pdb
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\obj\Debug\ParkSS.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.ResolveComReference.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\obj\Debug\ParkSS.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\obj\Debug\ParkSS.exe
+C:\Users\HP\Desktop\College\Terceiro Ano\Integração de Sistemas\Projeto\Projeto-IS\ParkSS\obj\Debug\ParkSS.pdb
