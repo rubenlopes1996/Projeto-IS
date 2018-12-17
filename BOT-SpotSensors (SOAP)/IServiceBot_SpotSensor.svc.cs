@@ -78,12 +78,12 @@ namespace BOT_SpotSensors__SOAP_
             int rand = random.Next(0, 50);
             if (rand < 45) 
             {
-                batteryStatus.InnerText = "0";
+                batteryStatus.InnerText = "1";
             }
                  
             else 
             {
-                batteryStatus.InnerText = "1";
+                batteryStatus.InnerText = "0";
             }
 
             parkingSpot.AppendChild(idSpot);
