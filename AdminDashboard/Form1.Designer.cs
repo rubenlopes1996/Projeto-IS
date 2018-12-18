@@ -57,32 +57,64 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.comboBoxFreeParks = new System.Windows.Forms.ComboBox();
+            this.buttonFreeParkingSpots = new System.Windows.Forms.Button();
+            this.richTextBoxFreeParkingSpot = new System.Windows.Forms.RichTextBox();
+            this.timePickerFreeParkingSpots = new System.Windows.Forms.DateTimePicker();
+            this.datePickerFreeParkingSpots = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buttonListBelongingPark = new System.Windows.Forms.Button();
+            this.comboBoxSpotsSpecificPark = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.richTextBoxListBelongingPark = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonSpecificPark = new System.Windows.Forms.Button();
+            this.richTextBoxInfoSpecificPark = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBoxInfoSpecificPark = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.richTextBoxInfoSpecificSpot = new System.Windows.Forms.RichTextBox();
+            this.buttonInfoSpecificSpot = new System.Windows.Forms.Button();
+            this.comboBoxInfoSpecificSpot = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.richTextBoxSpotsNeedReplace = new System.Windows.Forms.RichTextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label12 = new System.Windows.Forms.Label();
-            this.richTextBoxListBelongingPark = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBoxSpotsSpecificPark = new System.Windows.Forms.ComboBox();
-            this.buttonListBelongingPark = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.datePickerFreeParkingSpots = new System.Windows.Forms.DateTimePicker();
-            this.timePickerFreeParkingSpots = new System.Windows.Forms.DateTimePicker();
-            this.richTextBoxFreeParkingSpot = new System.Windows.Forms.RichTextBox();
-            this.buttonFreeParkingSpots = new System.Windows.Forms.Button();
-            this.comboBoxFreeParks = new System.Windows.Forms.ComboBox();
+            this.buttonSpotsNeedReplace = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBoxSpotsReplacePark = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.buttonSpotsReplacePark = new System.Windows.Forms.Button();
+            this.richTextBoxNeedReplacePark = new System.Windows.Forms.RichTextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBoxOccupancyRate = new System.Windows.Forms.ComboBox();
+            this.richTextBoxOccupancyRate = new System.Windows.Forms.RichTextBox();
+            this.buttonOccupancyRate = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +140,10 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Location = new System.Drawing.Point(12, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -128,6 +164,9 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.richTextBox1.Location = new System.Drawing.Point(6, 6);
             this.richTextBox1.Name = "richTextBox1";
@@ -400,82 +439,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "List of Parking Spots in a Specific Park For a Given Moment";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1090, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.buttonListBelongingPark);
-            this.tabPage4.Controls.Add(this.comboBoxSpotsSpecificPark);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.richTextBoxListBelongingPark);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1145, 592);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Parking Spots Belonging to a Specific Park";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(386, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "List Parking Spots Belonging to a Specific Park";
-            // 
-            // richTextBoxListBelongingPark
-            // 
-            this.richTextBoxListBelongingPark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxListBelongingPark.Location = new System.Drawing.Point(18, 132);
-            this.richTextBoxListBelongingPark.Name = "richTextBoxListBelongingPark";
-            this.richTextBoxListBelongingPark.Size = new System.Drawing.Size(1121, 457);
-            this.richTextBoxListBelongingPark.TabIndex = 1;
-            this.richTextBoxListBelongingPark.Text = "";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(36, 95);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Park: ";
-            // 
-            // comboBoxSpotsSpecificPark
-            // 
-            this.comboBoxSpotsSpecificPark.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxSpotsSpecificPark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSpotsSpecificPark.FormattingEnabled = true;
-            this.comboBoxSpotsSpecificPark.Location = new System.Drawing.Point(83, 92);
-            this.comboBoxSpotsSpecificPark.Name = "comboBoxSpotsSpecificPark";
-            this.comboBoxSpotsSpecificPark.Size = new System.Drawing.Size(186, 21);
-            this.comboBoxSpotsSpecificPark.TabIndex = 3;
-            // 
-            // buttonListBelongingPark
-            // 
-            this.buttonListBelongingPark.Location = new System.Drawing.Point(325, 90);
-            this.buttonListBelongingPark.Name = "buttonListBelongingPark";
-            this.buttonListBelongingPark.Size = new System.Drawing.Size(75, 23);
-            this.buttonListBelongingPark.TabIndex = 4;
-            this.buttonListBelongingPark.Text = "Search";
-            this.buttonListBelongingPark.UseVisualStyleBackColor = true;
-            this.buttonListBelongingPark.Click += new System.EventHandler(this.buttonListBelongingPark_Click);
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.comboBoxFreeParks);
@@ -495,61 +458,24 @@
             this.tabPage5.Text = "Free Parking Spots Specific Park for a Given Moment ";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // comboBoxFreeParks
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(14, 30);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(521, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "List of Free Parking Spots in a specific Park for a Given Moment";
+            this.comboBoxFreeParks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFreeParks.FormattingEnabled = true;
+            this.comboBoxFreeParks.Location = new System.Drawing.Point(85, 84);
+            this.comboBoxFreeParks.Name = "comboBoxFreeParks";
+            this.comboBoxFreeParks.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxFreeParks.TabIndex = 9;
             // 
-            // label15
+            // buttonFreeParkingSpots
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(38, 87);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Park: ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(37, 120);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 13);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Date: ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(37, 149);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Time: ";
-            // 
-            // datePickerFreeParkingSpots
-            // 
-            this.datePickerFreeParkingSpots.Location = new System.Drawing.Point(85, 120);
-            this.datePickerFreeParkingSpots.Name = "datePickerFreeParkingSpots";
-            this.datePickerFreeParkingSpots.Size = new System.Drawing.Size(200, 20);
-            this.datePickerFreeParkingSpots.TabIndex = 5;
-            // 
-            // timePickerFreeParkingSpots
-            // 
-            this.timePickerFreeParkingSpots.CustomFormat = "HH:mm:ss tt";
-            this.timePickerFreeParkingSpots.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerFreeParkingSpots.Location = new System.Drawing.Point(85, 149);
-            this.timePickerFreeParkingSpots.Name = "timePickerFreeParkingSpots";
-            this.timePickerFreeParkingSpots.Size = new System.Drawing.Size(200, 20);
-            this.timePickerFreeParkingSpots.TabIndex = 6;
+            this.buttonFreeParkingSpots.Location = new System.Drawing.Point(324, 146);
+            this.buttonFreeParkingSpots.Name = "buttonFreeParkingSpots";
+            this.buttonFreeParkingSpots.Size = new System.Drawing.Size(75, 23);
+            this.buttonFreeParkingSpots.TabIndex = 8;
+            this.buttonFreeParkingSpots.Text = "Search";
+            this.buttonFreeParkingSpots.UseVisualStyleBackColor = true;
+            this.buttonFreeParkingSpots.Click += new System.EventHandler(this.buttonFreeParkingSpots_Click);
             // 
             // richTextBoxFreeParkingSpot
             // 
@@ -564,24 +490,445 @@
             this.richTextBoxFreeParkingSpot.TabIndex = 7;
             this.richTextBoxFreeParkingSpot.Text = "";
             // 
-            // buttonFreeParkingSpots
+            // timePickerFreeParkingSpots
             // 
-            this.buttonFreeParkingSpots.Location = new System.Drawing.Point(324, 146);
-            this.buttonFreeParkingSpots.Name = "buttonFreeParkingSpots";
-            this.buttonFreeParkingSpots.Size = new System.Drawing.Size(75, 23);
-            this.buttonFreeParkingSpots.TabIndex = 8;
-            this.buttonFreeParkingSpots.Text = "Search";
-            this.buttonFreeParkingSpots.UseVisualStyleBackColor = true;
-            this.buttonFreeParkingSpots.Click += new System.EventHandler(this.buttonFreeParkingSpots_Click);
+            this.timePickerFreeParkingSpots.CustomFormat = "HH:mm:ss tt";
+            this.timePickerFreeParkingSpots.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePickerFreeParkingSpots.Location = new System.Drawing.Point(85, 149);
+            this.timePickerFreeParkingSpots.Name = "timePickerFreeParkingSpots";
+            this.timePickerFreeParkingSpots.Size = new System.Drawing.Size(200, 20);
+            this.timePickerFreeParkingSpots.TabIndex = 6;
             // 
-            // comboBoxFreeParks
+            // datePickerFreeParkingSpots
             // 
-            this.comboBoxFreeParks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFreeParks.FormattingEnabled = true;
-            this.comboBoxFreeParks.Location = new System.Drawing.Point(85, 84);
-            this.comboBoxFreeParks.Name = "comboBoxFreeParks";
-            this.comboBoxFreeParks.Size = new System.Drawing.Size(200, 21);
-            this.comboBoxFreeParks.TabIndex = 9;
+            this.datePickerFreeParkingSpots.Location = new System.Drawing.Point(85, 120);
+            this.datePickerFreeParkingSpots.Name = "datePickerFreeParkingSpots";
+            this.datePickerFreeParkingSpots.Size = new System.Drawing.Size(200, 20);
+            this.datePickerFreeParkingSpots.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(37, 149);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Time: ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(37, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Date: ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(38, 87);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Park: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(14, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(521, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "List of Free Parking Spots in a specific Park for a Given Moment";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.buttonListBelongingPark);
+            this.tabPage4.Controls.Add(this.comboBoxSpotsSpecificPark);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.richTextBoxListBelongingPark);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Parking Spots Belonging to a Specific Park";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buttonListBelongingPark
+            // 
+            this.buttonListBelongingPark.Location = new System.Drawing.Point(325, 90);
+            this.buttonListBelongingPark.Name = "buttonListBelongingPark";
+            this.buttonListBelongingPark.Size = new System.Drawing.Size(75, 23);
+            this.buttonListBelongingPark.TabIndex = 4;
+            this.buttonListBelongingPark.Text = "Search";
+            this.buttonListBelongingPark.UseVisualStyleBackColor = true;
+            this.buttonListBelongingPark.Click += new System.EventHandler(this.buttonListBelongingPark_Click);
+            // 
+            // comboBoxSpotsSpecificPark
+            // 
+            this.comboBoxSpotsSpecificPark.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.comboBoxSpotsSpecificPark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSpotsSpecificPark.FormattingEnabled = true;
+            this.comboBoxSpotsSpecificPark.Location = new System.Drawing.Point(83, 92);
+            this.comboBoxSpotsSpecificPark.Name = "comboBoxSpotsSpecificPark";
+            this.comboBoxSpotsSpecificPark.Size = new System.Drawing.Size(186, 21);
+            this.comboBoxSpotsSpecificPark.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(36, 95);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Park: ";
+            // 
+            // richTextBoxListBelongingPark
+            // 
+            this.richTextBoxListBelongingPark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxListBelongingPark.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxListBelongingPark.Location = new System.Drawing.Point(18, 132);
+            this.richTextBoxListBelongingPark.Name = "richTextBoxListBelongingPark";
+            this.richTextBoxListBelongingPark.Size = new System.Drawing.Size(1121, 457);
+            this.richTextBoxListBelongingPark.TabIndex = 1;
+            this.richTextBoxListBelongingPark.Text = "";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 27);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(386, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "List Parking Spots Belonging to a Specific Park";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.buttonSpecificPark);
+            this.tabPage6.Controls.Add(this.richTextBoxInfoSpecificPark);
+            this.tabPage6.Controls.Add(this.label19);
+            this.tabPage6.Controls.Add(this.comboBoxInfoSpecificPark);
+            this.tabPage6.Controls.Add(this.label18);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Detailed Information about a Specific Park";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonSpecificPark
+            // 
+            this.buttonSpecificPark.Location = new System.Drawing.Point(297, 76);
+            this.buttonSpecificPark.Name = "buttonSpecificPark";
+            this.buttonSpecificPark.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpecificPark.TabIndex = 4;
+            this.buttonSpecificPark.Text = "Search";
+            this.buttonSpecificPark.UseVisualStyleBackColor = true;
+            this.buttonSpecificPark.Click += new System.EventHandler(this.buttonSpecificPark_Click);
+            // 
+            // richTextBoxInfoSpecificPark
+            // 
+            this.richTextBoxInfoSpecificPark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxInfoSpecificPark.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxInfoSpecificPark.Location = new System.Drawing.Point(27, 128);
+            this.richTextBoxInfoSpecificPark.Name = "richTextBoxInfoSpecificPark";
+            this.richTextBoxInfoSpecificPark.Size = new System.Drawing.Size(1085, 443);
+            this.richTextBoxInfoSpecificPark.TabIndex = 3;
+            this.richTextBoxInfoSpecificPark.Text = "";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(23, 24);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(349, 20);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Detailed Information about a Specific Park";
+            // 
+            // comboBoxInfoSpecificPark
+            // 
+            this.comboBoxInfoSpecificPark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxInfoSpecificPark.FormattingEnabled = true;
+            this.comboBoxInfoSpecificPark.Location = new System.Drawing.Point(87, 78);
+            this.comboBoxInfoSpecificPark.Name = "comboBoxInfoSpecificPark";
+            this.comboBoxInfoSpecificPark.Size = new System.Drawing.Size(159, 21);
+            this.comboBoxInfoSpecificPark.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(44, 81);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Park:";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.richTextBoxInfoSpecificSpot);
+            this.tabPage7.Controls.Add(this.buttonInfoSpecificSpot);
+            this.tabPage7.Controls.Add(this.comboBoxInfoSpecificSpot);
+            this.tabPage7.Controls.Add(this.label21);
+            this.tabPage7.Controls.Add(this.label20);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Detailed Information About a Specific Parking Spot In a Given Moment";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxInfoSpecificSpot
+            // 
+            this.richTextBoxInfoSpecificSpot.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxInfoSpecificSpot.Location = new System.Drawing.Point(18, 139);
+            this.richTextBoxInfoSpecificSpot.Name = "richTextBoxInfoSpecificSpot";
+            this.richTextBoxInfoSpecificSpot.Size = new System.Drawing.Size(1104, 435);
+            this.richTextBoxInfoSpecificSpot.TabIndex = 4;
+            this.richTextBoxInfoSpecificSpot.Text = "";
+            // 
+            // buttonInfoSpecificSpot
+            // 
+            this.buttonInfoSpecificSpot.Location = new System.Drawing.Point(268, 91);
+            this.buttonInfoSpecificSpot.Name = "buttonInfoSpecificSpot";
+            this.buttonInfoSpecificSpot.Size = new System.Drawing.Size(75, 23);
+            this.buttonInfoSpecificSpot.TabIndex = 3;
+            this.buttonInfoSpecificSpot.Text = "Search";
+            this.buttonInfoSpecificSpot.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxInfoSpecificSpot
+            // 
+            this.comboBoxInfoSpecificSpot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxInfoSpecificSpot.FormattingEnabled = true;
+            this.comboBoxInfoSpecificSpot.Location = new System.Drawing.Point(95, 91);
+            this.comboBoxInfoSpecificSpot.Name = "comboBoxInfoSpecificSpot";
+            this.comboBoxInfoSpecificSpot.Size = new System.Drawing.Size(140, 21);
+            this.comboBoxInfoSpecificSpot.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(37, 91);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Spots:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(14, 40);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(572, 20);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Detailed Information About a Specific Parking Spot in a Given Moment";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.richTextBoxNeedReplacePark);
+            this.tabPage8.Controls.Add(this.buttonSpotsReplacePark);
+            this.tabPage8.Controls.Add(this.label25);
+            this.tabPage8.Controls.Add(this.comboBoxSpotsReplacePark);
+            this.tabPage8.Controls.Add(this.label24);
+            this.tabPage8.Controls.Add(this.label23);
+            this.tabPage8.Controls.Add(this.buttonSpotsNeedReplace);
+            this.tabPage8.Controls.Add(this.richTextBoxSpotsNeedReplace);
+            this.tabPage8.Controls.Add(this.label22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "List of Parking Spots Need Replace";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxSpotsNeedReplace
+            // 
+            this.richTextBoxSpotsNeedReplace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextBoxSpotsNeedReplace.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxSpotsNeedReplace.Location = new System.Drawing.Point(18, 154);
+            this.richTextBoxSpotsNeedReplace.Name = "richTextBoxSpotsNeedReplace";
+            this.richTextBoxSpotsNeedReplace.Size = new System.Drawing.Size(542, 421);
+            this.richTextBoxSpotsNeedReplace.TabIndex = 1;
+            this.richTextBoxSpotsNeedReplace.Text = "";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(14, 31);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(752, 20);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "List of Parking Spots Sensors That Need to be Replaced Because of its Critical Ba" +
+    "ttery Level";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(1090, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonSpotsNeedReplace
+            // 
+            this.buttonSpotsNeedReplace.Location = new System.Drawing.Point(18, 122);
+            this.buttonSpotsNeedReplace.Name = "buttonSpotsNeedReplace";
+            this.buttonSpotsNeedReplace.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpotsNeedReplace.TabIndex = 2;
+            this.buttonSpotsNeedReplace.Text = "Show";
+            this.buttonSpotsNeedReplace.UseVisualStyleBackColor = true;
+            this.buttonSpotsNeedReplace.Click += new System.EventHandler(this.buttonSpotsNeedReplace_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(15, 95);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(243, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Show all spots that needs to be replaced ";
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(581, 95);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(322, 13);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Show spots that need to be replaced in a specific park ";
+            // 
+            // comboBoxSpotsReplacePark
+            // 
+            this.comboBoxSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSpotsReplacePark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSpotsReplacePark.FormattingEnabled = true;
+            this.comboBoxSpotsReplacePark.Location = new System.Drawing.Point(624, 119);
+            this.comboBoxSpotsReplacePark.Name = "comboBoxSpotsReplacePark";
+            this.comboBoxSpotsReplacePark.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxSpotsReplacePark.TabIndex = 5;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(581, 127);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(37, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Park:";
+            // 
+            // buttonSpotsReplacePark
+            // 
+            this.buttonSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSpotsReplacePark.Location = new System.Drawing.Point(1055, 117);
+            this.buttonSpotsReplacePark.Name = "buttonSpotsReplacePark";
+            this.buttonSpotsReplacePark.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpotsReplacePark.TabIndex = 7;
+            this.buttonSpotsReplacePark.Text = "Search";
+            this.buttonSpotsReplacePark.UseVisualStyleBackColor = true;
+            this.buttonSpotsReplacePark.Click += new System.EventHandler(this.buttonSpotsReplacePark_Click);
+            // 
+            // richTextBoxNeedReplacePark
+            // 
+            this.richTextBoxNeedReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxNeedReplacePark.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxNeedReplacePark.Location = new System.Drawing.Point(584, 154);
+            this.richTextBoxNeedReplacePark.Name = "richTextBoxNeedReplacePark";
+            this.richTextBoxNeedReplacePark.Size = new System.Drawing.Size(546, 435);
+            this.richTextBoxNeedReplacePark.TabIndex = 8;
+            this.richTextBoxNeedReplacePark.Text = "";
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.buttonOccupancyRate);
+            this.tabPage9.Controls.Add(this.richTextBoxOccupancyRate);
+            this.tabPage9.Controls.Add(this.comboBoxOccupancyRate);
+            this.tabPage9.Controls.Add(this.label27);
+            this.tabPage9.Controls.Add(this.label26);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Instant Occupancy Rate";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(14, 27);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(347, 20);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Instant Occupancy Rate in a Specific Park";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(30, 81);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(41, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Park: ";
+            // 
+            // comboBoxOccupancyRate
+            // 
+            this.comboBoxOccupancyRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOccupancyRate.FormattingEnabled = true;
+            this.comboBoxOccupancyRate.Location = new System.Drawing.Point(77, 81);
+            this.comboBoxOccupancyRate.Name = "comboBoxOccupancyRate";
+            this.comboBoxOccupancyRate.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxOccupancyRate.TabIndex = 2;
+            // 
+            // richTextBoxOccupancyRate
+            // 
+            this.richTextBoxOccupancyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxOccupancyRate.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxOccupancyRate.Location = new System.Drawing.Point(18, 120);
+            this.richTextBoxOccupancyRate.Name = "richTextBoxOccupancyRate";
+            this.richTextBoxOccupancyRate.Size = new System.Drawing.Size(1108, 458);
+            this.richTextBoxOccupancyRate.TabIndex = 3;
+            this.richTextBoxOccupancyRate.Text = "";
+            // 
+            // buttonOccupancyRate
+            // 
+            this.buttonOccupancyRate.Location = new System.Drawing.Point(314, 81);
+            this.buttonOccupancyRate.Name = "buttonOccupancyRate";
+            this.buttonOccupancyRate.Size = new System.Drawing.Size(75, 23);
+            this.buttonOccupancyRate.TabIndex = 4;
+            this.buttonOccupancyRate.Text = "Search";
+            this.buttonOccupancyRate.UseVisualStyleBackColor = true;
+            this.buttonOccupancyRate.Click += new System.EventHandler(this.buttonOccupancyRate_Click);
             // 
             // Form1
             // 
@@ -600,11 +947,19 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -659,6 +1014,34 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBoxFreeParks;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button buttonSpecificPark;
+        private System.Windows.Forms.RichTextBox richTextBoxInfoSpecificPark;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBoxInfoSpecificPark;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.RichTextBox richTextBoxInfoSpecificSpot;
+        private System.Windows.Forms.Button buttonInfoSpecificSpot;
+        private System.Windows.Forms.ComboBox comboBoxInfoSpecificSpot;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.RichTextBox richTextBoxSpotsNeedReplace;
+        private System.Windows.Forms.Button buttonSpotsNeedReplace;
+        private System.Windows.Forms.RichTextBox richTextBoxNeedReplacePark;
+        private System.Windows.Forms.Button buttonSpotsReplacePark;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox comboBoxSpotsReplacePark;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button buttonOccupancyRate;
+        private System.Windows.Forms.RichTextBox richTextBoxOccupancyRate;
+        private System.Windows.Forms.ComboBox comboBoxOccupancyRate;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }
 

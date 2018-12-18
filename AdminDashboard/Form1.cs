@@ -21,6 +21,10 @@ namespace AdminDashboard
         List<Spots> spotsPerData = new List<Spots>();
         List<Spots> listSpotsBelongingPark = new List<Spots>();
         List<Spots> freeSpotsSpecificPark = new List<Spots>();
+        Park parkInfoSpecificPark = new Park();
+        List<Spots> listSpotsNeedReplace = new List<Spots>();
+        List<Spots> listSpotsNeedReplaceSpecificPark = new List<Spots>();
+        String occupancyRate;
 
 
         public Form1()
@@ -40,6 +44,11 @@ namespace AdminDashboard
          *  2 - Parks por tempo e data
          *  3 - Free spots of specific park
          *  4 - List Spots of specific park
+         *  5 - Information Specific park
+         *  
+         *  7 - Needs Replace
+         *  8 - Spots need replace within a specific park
+         *  9 - OccupacyRate
          */
 
         private void loadAPIS(int api, string apiAppend)
@@ -67,6 +76,18 @@ namespace AdminDashboard
                         break;
                     case 4:
                         listSpotsBelongingPark = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Spots>>(json);
+                        break;
+                    case 5: 
+                        parkInfoSpecificPark = Newtonsoft.Json.JsonConvert.DeserializeObject<Park>(json);
+                        break;
+                    case 7:
+                        listSpotsNeedReplace = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Spots>>(json);
+                        break;
+                    case 8:
+                        listSpotsNeedReplaceSpecificPark = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Spots>>(json);
+                        break;
+                    case 9:
+                        occupancyRate = Newtonsoft.Json.JsonConvert.DeserializeObject<String>(json);
                         break;
                     default:
                         break;
@@ -97,6 +118,9 @@ namespace AdminDashboard
                 parkSpecificParkData.Items.Add(park.Name);
                 comboBoxSpotsSpecificPark.Items.Add(park.Name);
                 comboBoxFreeParks.Items.Add(park.Name);
+                comboBoxInfoSpecificPark.Items.Add(park.Name);
+                comboBoxSpotsReplacePark.Items.Add(park.Name);
+                comboBoxOccupancyRate.Items.Add(park.Name);
             }
         }
 
@@ -180,6 +204,68 @@ namespace AdminDashboard
                 richTextBoxFreeParkingSpot.AppendText(ShowSpot(spot));
                 this.tabControl1.TabPages[0].Focus();
             }
+        }
+
+        private void buttonSpecificPark_Click(object sender, EventArgs e)
+        {
+            string park = comboBoxInfoSpecificPark.SelectedItem.ToString();
+            string toAppendAPI = "api/parks/" + park;
+
+            loadAPIS(5, toAppendAPI);
+
+            richTextBoxInfoSpecificPark.Clear();
+
+           richTextBoxInfoSpecificPark.AppendText(ShowPark(parkInfoSpecificPark));
+        }
+
+        private void richTextBoxSpotsNeedChange_ParentChanged(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void buttonSpotsNeedReplace_Click(object sender, EventArgs e)
+        {
+            string toAppendAPI = "api/spots/needReplace";
+            loadAPIS(7, toAppendAPI);
+
+            richTextBoxSpotsNeedReplace.Clear();
+
+            foreach (Spots spot in listSpotsNeedReplace)
+            {
+                richTextBoxSpotsNeedReplace.AppendText(ShowSpot(spot));
+                this.tabControl1.TabPages[0].Focus();
+            }
+        }
+
+        private void buttonSpotsReplacePark_Click(object sender, EventArgs e)
+        {
+            string park = comboBoxSpotsReplacePark.SelectedItem.ToString();
+            string toAppendAPI = "api/spots/park/" + park + "/needReplace";
+
+            loadAPIS(8, toAppendAPI);
+
+            richTextBoxNeedReplacePark.Clear();
+
+            foreach (Spots spot in listSpotsNeedReplaceSpecificPark)
+            {
+                richTextBoxNeedReplacePark.AppendText(ShowSpot(spot));
+                this.tabControl1.TabPages[0].Focus();
+            }
+        }
+
+        private void buttonOccupancyRate_Click(object sender, EventArgs e)
+        {
+            string park = comboBoxOccupancyRate.SelectedItem.ToString();
+            string toAppendAPI = "api/spots/park/" + park + "/occupancyRate";
+
+            loadAPIS(9, toAppendAPI);
+
+            richTextBoxOccupancyRate.Clear();
+
+            richTextBoxOccupancyRate.AppendText(occupancyRate);
+
+            
         }
     }
 }
