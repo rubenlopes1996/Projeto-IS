@@ -24,7 +24,9 @@ namespace AdminDashboard
         Park parkInfoSpecificPark = new Park();
         List<Spots> listSpotsNeedReplace = new List<Spots>();
         List<Spots> listSpotsNeedReplaceSpecificPark = new List<Spots>();
+        List<Spots> allSpots = new List<Spots>();
         String occupancyRate;
+        Spots infoSpecificSpot = new Spots();
 
 
         public Form1()
@@ -45,10 +47,11 @@ namespace AdminDashboard
          *  3 - Free spots of specific park
          *  4 - List Spots of specific park
          *  5 - Information Specific park
-         *  
+         *  6 - Info specific spot
          *  7 - Needs Replace
          *  8 - Spots need replace within a specific park
          *  9 - OccupacyRate
+         *  10 - Get all spots
          */
 
         private void loadAPIS(int api, string apiAppend)
@@ -80,6 +83,9 @@ namespace AdminDashboard
                     case 5: 
                         parkInfoSpecificPark = Newtonsoft.Json.JsonConvert.DeserializeObject<Park>(json);
                         break;
+                    case 6:
+                        infoSpecificSpot = Newtonsoft.Json.JsonConvert.DeserializeObject<Spots>(json);
+                        break;
                     case 7:
                         listSpotsNeedReplace = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Spots>>(json);
                         break;
@@ -88,6 +94,9 @@ namespace AdminDashboard
                         break;
                     case 9:
                         occupancyRate = Newtonsoft.Json.JsonConvert.DeserializeObject<String>(json);
+                        break;
+                    case 10: 
+                        allSpots = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Spots>>(json);
                         break;
                     default:
                         break;
@@ -106,8 +115,11 @@ namespace AdminDashboard
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string apiAppend = "api/parks";
-            loadAPIS(0, apiAppend);
+            string apiAppendParks = "api/parks";
+            string apiAppendSpots = "api/spots";
+
+            loadAPIS(0, apiAppendParks);
+            loadAPIS(10, apiAppendSpots);
 
             richTextBox1.Clear();
             foreach (Park park in parks)
@@ -122,6 +134,22 @@ namespace AdminDashboard
                 comboBoxSpotsReplacePark.Items.Add(park.Name);
                 comboBoxOccupancyRate.Items.Add(park.Name);
             }
+
+            foreach (Spots spot in allSpots)
+            {
+                comboBoxInfoSpecificSpot.Items.Add(spot.Name);
+            }
+
+            //Predefinição de um valor
+            comboBox2.SelectedIndex = 0;
+            parkSpecificParkData.SelectedIndex = 0;
+            comboBoxSpotsSpecificPark.SelectedIndex = 0;
+            comboBoxFreeParks.SelectedIndex = 0;
+            comboBoxInfoSpecificPark.SelectedIndex = 0;
+            comboBoxSpotsReplacePark.SelectedIndex = 0;
+            comboBoxOccupancyRate.SelectedIndex = 0;
+            comboBoxInfoSpecificSpot.SelectedIndex = 0;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -218,12 +246,6 @@ namespace AdminDashboard
            richTextBoxInfoSpecificPark.AppendText(ShowPark(parkInfoSpecificPark));
         }
 
-        private void richTextBoxSpotsNeedChange_ParentChanged(object sender, EventArgs e)
-        {
-           
-
-        }
-
         private void buttonSpotsNeedReplace_Click(object sender, EventArgs e)
         {
             string toAppendAPI = "api/spots/needReplace";
@@ -265,6 +287,28 @@ namespace AdminDashboard
 
             richTextBoxOccupancyRate.AppendText(occupancyRate);
 
+            
+        }
+
+        private void buttonInfoSpecificSpot_Click(object sender, EventArgs e)
+        {
+            string spot = comboBoxInfoSpecificSpot.SelectedItem.ToString();
+            string data = datePickerSpotSpecificTime.Value.ToString("yyyy-M-d");
+            string time = TimePickerSpotSpecificTime.Value.ToString("HH:mm:ss");
+
+            string toAppendAPI = "api/spots/" + spot + "/" + data + "T" + time;
+
+            loadAPIS(6, toAppendAPI);
+
+            richTextBoxInfoSpecificSpot.Clear();
+            if (infoSpecificSpot != null)
+            {
+                richTextBoxInfoSpecificSpot.AppendText(ShowSpot(infoSpecificSpot));
+            }
+            else
+            {
+                richTextBoxInfoSpecificSpot.AppendText("Nao foi encontrado nenhum Spot nessa data e hora");
+            }
             
         }
     }

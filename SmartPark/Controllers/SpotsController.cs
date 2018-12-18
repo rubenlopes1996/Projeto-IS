@@ -153,9 +153,9 @@ namespace SmartPark.Controllers
 
         //7. Detailed information about a specific parking spot in a given moment (should also indicated if the spot is free or occupied)
         [Route("{idSpot}/{timestamp}")]
-        public IEnumerable<Spots> GetSpotByGivenTime(string idSpot, DateTime timestamp)
+        public IHttpActionResult GetSpotByGivenTime(string idSpot, DateTime timestamp)
         {
-            List<Spots> spots = new List<Spots>();
+            Spots spot = new Spots();
 
             SqlConnection conn = new SqlConnection(connectionString);
             try
@@ -167,7 +167,7 @@ namespace SmartPark.Controllers
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Spots s = new Spots
+                    spot = new Spots
                     {
                         Id = (string)reader["Id"],
                         Name = (string)reader["Name"],
@@ -178,7 +178,6 @@ namespace SmartPark.Controllers
                         Latitude = (string)reader["GeoLatitude"],
                         Longitude = (string)reader["GeoLongitude"]
                     };
-                    spots.Add(s);
                 }
                 reader.Close();
                 conn.Close();
@@ -191,7 +190,7 @@ namespace SmartPark.Controllers
                     conn.Close();
                 }
             }
-            return spots;
+            return Ok(spot);
         }
         
 

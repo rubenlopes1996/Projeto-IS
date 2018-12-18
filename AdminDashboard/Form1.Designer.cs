@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,24 +87,28 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.richTextBoxNeedReplacePark = new System.Windows.Forms.RichTextBox();
+            this.buttonSpotsReplacePark = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBoxSpotsReplacePark = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.buttonSpotsNeedReplace = new System.Windows.Forms.Button();
             this.richTextBoxSpotsNeedReplace = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.buttonOccupancyRate = new System.Windows.Forms.Button();
+            this.richTextBoxOccupancyRate = new System.Windows.Forms.RichTextBox();
+            this.comboBoxOccupancyRate = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.buttonSpotsNeedReplace = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.comboBoxSpotsReplacePark = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.buttonSpotsReplacePark = new System.Windows.Forms.Button();
-            this.richTextBoxNeedReplacePark = new System.Windows.Forms.RichTextBox();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.comboBoxOccupancyRate = new System.Windows.Forms.ComboBox();
-            this.richTextBoxOccupancyRate = new System.Windows.Forms.RichTextBox();
-            this.buttonOccupancyRate = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.datePickerSpotSpecificTime = new System.Windows.Forms.DateTimePicker();
+            this.TimePickerSpotSpecificTime = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -113,8 +118,8 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -132,9 +137,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -145,22 +147,36 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Location = new System.Drawing.Point(12, 67);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(10, 10);
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1153, 618);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Silver;
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label28);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 68);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage1.Size = new System.Drawing.Size(1145, 546);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All Parks Available";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(14, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(156, 20);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "All Parks Available";
             // 
             // richTextBox1
             // 
@@ -168,9 +184,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
+            this.richTextBox1.Location = new System.Drawing.Point(18, 77);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1143, 536);
+            this.richTextBox1.Size = new System.Drawing.Size(1112, 463);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -185,10 +201,10 @@
             this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 68);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage2.Size = new System.Drawing.Size(1145, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Parking Spots in a Specific Park for a Given moment";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -223,7 +239,7 @@
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.richTextBox2.Location = new System.Drawing.Point(35, 186);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(1066, 378);
+            this.richTextBox2.Size = new System.Drawing.Size(1066, 364);
             this.richTextBox2.TabIndex = 7;
             this.richTextBox2.Text = "";
             // 
@@ -304,10 +320,10 @@
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 68);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage3.Size = new System.Drawing.Size(1145, 546);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "List of Parking Spots in a Specific Park For a Given Moment";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -366,14 +382,14 @@
             this.spotsSpecificParkData.BackColor = System.Drawing.SystemColors.Control;
             this.spotsSpecificParkData.Location = new System.Drawing.Point(33, 185);
             this.spotsSpecificParkData.Name = "spotsSpecificParkData";
-            this.spotsSpecificParkData.Size = new System.Drawing.Size(1075, 379);
+            this.spotsSpecificParkData.Size = new System.Drawing.Size(1075, 365);
             this.spotsSpecificParkData.TabIndex = 8;
             this.spotsSpecificParkData.Text = "";
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1033, 156);
+            this.button3.Location = new System.Drawing.Point(1033, 142);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
@@ -450,10 +466,10 @@
             this.tabPage5.Controls.Add(this.label16);
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.label14);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 68);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage5.Size = new System.Drawing.Size(1145, 546);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Free Parking Spots Specific Park for a Given Moment ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -486,7 +502,7 @@
             this.richTextBoxFreeParkingSpot.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxFreeParkingSpot.Location = new System.Drawing.Point(40, 175);
             this.richTextBoxFreeParkingSpot.Name = "richTextBoxFreeParkingSpot";
-            this.richTextBoxFreeParkingSpot.Size = new System.Drawing.Size(1068, 399);
+            this.richTextBoxFreeParkingSpot.Size = new System.Drawing.Size(1068, 385);
             this.richTextBoxFreeParkingSpot.TabIndex = 7;
             this.richTextBoxFreeParkingSpot.Text = "";
             // 
@@ -553,10 +569,10 @@
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.richTextBoxListBelongingPark);
             this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 68);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage4.Size = new System.Drawing.Size(1145, 546);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Parking Spots Belonging to a Specific Park";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -599,7 +615,7 @@
             this.richTextBoxListBelongingPark.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxListBelongingPark.Location = new System.Drawing.Point(18, 132);
             this.richTextBoxListBelongingPark.Name = "richTextBoxListBelongingPark";
-            this.richTextBoxListBelongingPark.Size = new System.Drawing.Size(1121, 457);
+            this.richTextBoxListBelongingPark.Size = new System.Drawing.Size(1121, 411);
             this.richTextBoxListBelongingPark.TabIndex = 1;
             this.richTextBoxListBelongingPark.Text = "";
             // 
@@ -620,10 +636,10 @@
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.comboBoxInfoSpecificPark);
             this.tabPage6.Controls.Add(this.label18);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 68);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage6.Size = new System.Drawing.Size(1145, 546);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Detailed Information about a Specific Park";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -646,7 +662,7 @@
             this.richTextBoxInfoSpecificPark.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxInfoSpecificPark.Location = new System.Drawing.Point(27, 128);
             this.richTextBoxInfoSpecificPark.Name = "richTextBoxInfoSpecificPark";
-            this.richTextBoxInfoSpecificPark.Size = new System.Drawing.Size(1085, 443);
+            this.richTextBoxInfoSpecificPark.Size = new System.Drawing.Size(1085, 397);
             this.richTextBoxInfoSpecificPark.TabIndex = 3;
             this.richTextBoxInfoSpecificPark.Text = "";
             // 
@@ -681,14 +697,18 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.TimePickerSpotSpecificTime);
+            this.tabPage7.Controls.Add(this.datePickerSpotSpecificTime);
+            this.tabPage7.Controls.Add(this.label30);
+            this.tabPage7.Controls.Add(this.label29);
             this.tabPage7.Controls.Add(this.richTextBoxInfoSpecificSpot);
             this.tabPage7.Controls.Add(this.buttonInfoSpecificSpot);
             this.tabPage7.Controls.Add(this.comboBoxInfoSpecificSpot);
             this.tabPage7.Controls.Add(this.label21);
             this.tabPage7.Controls.Add(this.label20);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 68);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage7.Size = new System.Drawing.Size(1145, 546);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Detailed Information About a Specific Parking Spot In a Given Moment";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -696,20 +716,21 @@
             // richTextBoxInfoSpecificSpot
             // 
             this.richTextBoxInfoSpecificSpot.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBoxInfoSpecificSpot.Location = new System.Drawing.Point(18, 139);
+            this.richTextBoxInfoSpecificSpot.Location = new System.Drawing.Point(18, 153);
             this.richTextBoxInfoSpecificSpot.Name = "richTextBoxInfoSpecificSpot";
-            this.richTextBoxInfoSpecificSpot.Size = new System.Drawing.Size(1104, 435);
+            this.richTextBoxInfoSpecificSpot.Size = new System.Drawing.Size(1104, 421);
             this.richTextBoxInfoSpecificSpot.TabIndex = 4;
             this.richTextBoxInfoSpecificSpot.Text = "";
             // 
             // buttonInfoSpecificSpot
             // 
-            this.buttonInfoSpecificSpot.Location = new System.Drawing.Point(268, 91);
+            this.buttonInfoSpecificSpot.Location = new System.Drawing.Point(613, 120);
             this.buttonInfoSpecificSpot.Name = "buttonInfoSpecificSpot";
             this.buttonInfoSpecificSpot.Size = new System.Drawing.Size(75, 23);
             this.buttonInfoSpecificSpot.TabIndex = 3;
             this.buttonInfoSpecificSpot.Text = "Search";
             this.buttonInfoSpecificSpot.UseVisualStyleBackColor = true;
+            this.buttonInfoSpecificSpot.Click += new System.EventHandler(this.buttonInfoSpecificSpot_Click);
             // 
             // comboBoxInfoSpecificSpot
             // 
@@ -717,7 +738,7 @@
             this.comboBoxInfoSpecificSpot.FormattingEnabled = true;
             this.comboBoxInfoSpecificSpot.Location = new System.Drawing.Point(95, 91);
             this.comboBoxInfoSpecificSpot.Name = "comboBoxInfoSpecificSpot";
-            this.comboBoxInfoSpecificSpot.Size = new System.Drawing.Size(140, 21);
+            this.comboBoxInfoSpecificSpot.Size = new System.Drawing.Size(200, 21);
             this.comboBoxInfoSpecificSpot.TabIndex = 2;
             // 
             // label21
@@ -751,12 +772,86 @@
             this.tabPage8.Controls.Add(this.buttonSpotsNeedReplace);
             this.tabPage8.Controls.Add(this.richTextBoxSpotsNeedReplace);
             this.tabPage8.Controls.Add(this.label22);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 68);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage8.Size = new System.Drawing.Size(1145, 546);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "List of Parking Spots Need Replace";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxNeedReplacePark
+            // 
+            this.richTextBoxNeedReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxNeedReplacePark.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxNeedReplacePark.Location = new System.Drawing.Point(584, 154);
+            this.richTextBoxNeedReplacePark.Name = "richTextBoxNeedReplacePark";
+            this.richTextBoxNeedReplacePark.Size = new System.Drawing.Size(546, 389);
+            this.richTextBoxNeedReplacePark.TabIndex = 8;
+            this.richTextBoxNeedReplacePark.Text = "";
+            // 
+            // buttonSpotsReplacePark
+            // 
+            this.buttonSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSpotsReplacePark.Location = new System.Drawing.Point(1055, 117);
+            this.buttonSpotsReplacePark.Name = "buttonSpotsReplacePark";
+            this.buttonSpotsReplacePark.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpotsReplacePark.TabIndex = 7;
+            this.buttonSpotsReplacePark.Text = "Search";
+            this.buttonSpotsReplacePark.UseVisualStyleBackColor = true;
+            this.buttonSpotsReplacePark.Click += new System.EventHandler(this.buttonSpotsReplacePark_Click);
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(581, 127);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(37, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Park:";
+            // 
+            // comboBoxSpotsReplacePark
+            // 
+            this.comboBoxSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSpotsReplacePark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSpotsReplacePark.FormattingEnabled = true;
+            this.comboBoxSpotsReplacePark.Location = new System.Drawing.Point(624, 119);
+            this.comboBoxSpotsReplacePark.Name = "comboBoxSpotsReplacePark";
+            this.comboBoxSpotsReplacePark.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxSpotsReplacePark.TabIndex = 5;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(581, 95);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(322, 13);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Show spots that need to be replaced in a specific park ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(15, 95);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(243, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Show all spots that needs to be replaced ";
+            // 
+            // buttonSpotsNeedReplace
+            // 
+            this.buttonSpotsNeedReplace.Location = new System.Drawing.Point(18, 122);
+            this.buttonSpotsNeedReplace.Name = "buttonSpotsNeedReplace";
+            this.buttonSpotsNeedReplace.Size = new System.Drawing.Size(75, 23);
+            this.buttonSpotsNeedReplace.TabIndex = 2;
+            this.buttonSpotsNeedReplace.Text = "Show";
+            this.buttonSpotsNeedReplace.UseVisualStyleBackColor = true;
+            this.buttonSpotsNeedReplace.Click += new System.EventHandler(this.buttonSpotsNeedReplace_Click);
             // 
             // richTextBoxSpotsNeedReplace
             // 
@@ -765,7 +860,7 @@
             this.richTextBoxSpotsNeedReplace.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxSpotsNeedReplace.Location = new System.Drawing.Point(18, 154);
             this.richTextBoxSpotsNeedReplace.Name = "richTextBoxSpotsNeedReplace";
-            this.richTextBoxSpotsNeedReplace.Size = new System.Drawing.Size(542, 421);
+            this.richTextBoxSpotsNeedReplace.Size = new System.Drawing.Size(542, 375);
             this.richTextBoxSpotsNeedReplace.TabIndex = 1;
             this.richTextBoxSpotsNeedReplace.Text = "";
             // 
@@ -780,91 +875,6 @@
             this.label22.Text = "List of Parking Spots Sensors That Need to be Replaced Because of its Critical Ba" +
     "ttery Level";
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1090, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonSpotsNeedReplace
-            // 
-            this.buttonSpotsNeedReplace.Location = new System.Drawing.Point(18, 122);
-            this.buttonSpotsNeedReplace.Name = "buttonSpotsNeedReplace";
-            this.buttonSpotsNeedReplace.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpotsNeedReplace.TabIndex = 2;
-            this.buttonSpotsNeedReplace.Text = "Show";
-            this.buttonSpotsNeedReplace.UseVisualStyleBackColor = true;
-            this.buttonSpotsNeedReplace.Click += new System.EventHandler(this.buttonSpotsNeedReplace_Click);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(15, 95);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(243, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Show all spots that needs to be replaced ";
-            // 
-            // label24
-            // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(581, 95);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(322, 13);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Show spots that need to be replaced in a specific park ";
-            // 
-            // comboBoxSpotsReplacePark
-            // 
-            this.comboBoxSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSpotsReplacePark.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSpotsReplacePark.FormattingEnabled = true;
-            this.comboBoxSpotsReplacePark.Location = new System.Drawing.Point(624, 119);
-            this.comboBoxSpotsReplacePark.Name = "comboBoxSpotsReplacePark";
-            this.comboBoxSpotsReplacePark.Size = new System.Drawing.Size(168, 21);
-            this.comboBoxSpotsReplacePark.TabIndex = 5;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(581, 127);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 13);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Park:";
-            // 
-            // buttonSpotsReplacePark
-            // 
-            this.buttonSpotsReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSpotsReplacePark.Location = new System.Drawing.Point(1055, 117);
-            this.buttonSpotsReplacePark.Name = "buttonSpotsReplacePark";
-            this.buttonSpotsReplacePark.Size = new System.Drawing.Size(75, 23);
-            this.buttonSpotsReplacePark.TabIndex = 7;
-            this.buttonSpotsReplacePark.Text = "Search";
-            this.buttonSpotsReplacePark.UseVisualStyleBackColor = true;
-            this.buttonSpotsReplacePark.Click += new System.EventHandler(this.buttonSpotsReplacePark_Click);
-            // 
-            // richTextBoxNeedReplacePark
-            // 
-            this.richTextBoxNeedReplacePark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxNeedReplacePark.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBoxNeedReplacePark.Location = new System.Drawing.Point(584, 154);
-            this.richTextBoxNeedReplacePark.Name = "richTextBoxNeedReplacePark";
-            this.richTextBoxNeedReplacePark.Size = new System.Drawing.Size(546, 435);
-            this.richTextBoxNeedReplacePark.TabIndex = 8;
-            this.richTextBoxNeedReplacePark.Text = "";
-            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.buttonOccupancyRate);
@@ -872,22 +882,43 @@
             this.tabPage9.Controls.Add(this.comboBoxOccupancyRate);
             this.tabPage9.Controls.Add(this.label27);
             this.tabPage9.Controls.Add(this.label26);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 68);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1145, 592);
+            this.tabPage9.Size = new System.Drawing.Size(1145, 546);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Instant Occupancy Rate";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // label26
+            // buttonOccupancyRate
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(14, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(347, 20);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Instant Occupancy Rate in a Specific Park";
+            this.buttonOccupancyRate.Location = new System.Drawing.Point(314, 81);
+            this.buttonOccupancyRate.Name = "buttonOccupancyRate";
+            this.buttonOccupancyRate.Size = new System.Drawing.Size(75, 23);
+            this.buttonOccupancyRate.TabIndex = 4;
+            this.buttonOccupancyRate.Text = "Search";
+            this.buttonOccupancyRate.UseVisualStyleBackColor = true;
+            this.buttonOccupancyRate.Click += new System.EventHandler(this.buttonOccupancyRate_Click);
+            // 
+            // richTextBoxOccupancyRate
+            // 
+            this.richTextBoxOccupancyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxOccupancyRate.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBoxOccupancyRate.Location = new System.Drawing.Point(18, 120);
+            this.richTextBoxOccupancyRate.Name = "richTextBoxOccupancyRate";
+            this.richTextBoxOccupancyRate.Size = new System.Drawing.Size(1108, 412);
+            this.richTextBoxOccupancyRate.TabIndex = 3;
+            this.richTextBoxOccupancyRate.Text = "";
+            // 
+            // comboBoxOccupancyRate
+            // 
+            this.comboBoxOccupancyRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOccupancyRate.FormattingEnabled = true;
+            this.comboBoxOccupancyRate.Location = new System.Drawing.Point(77, 81);
+            this.comboBoxOccupancyRate.Name = "comboBoxOccupancyRate";
+            this.comboBoxOccupancyRate.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxOccupancyRate.TabIndex = 2;
             // 
             // label27
             // 
@@ -899,36 +930,64 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Park: ";
             // 
-            // comboBoxOccupancyRate
+            // label26
             // 
-            this.comboBoxOccupancyRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOccupancyRate.FormattingEnabled = true;
-            this.comboBoxOccupancyRate.Location = new System.Drawing.Point(77, 81);
-            this.comboBoxOccupancyRate.Name = "comboBoxOccupancyRate";
-            this.comboBoxOccupancyRate.Size = new System.Drawing.Size(164, 21);
-            this.comboBoxOccupancyRate.TabIndex = 2;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(14, 27);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(347, 20);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Instant Occupancy Rate in a Specific Park";
             // 
-            // richTextBoxOccupancyRate
+            // button1
             // 
-            this.richTextBoxOccupancyRate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxOccupancyRate.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBoxOccupancyRate.Location = new System.Drawing.Point(18, 120);
-            this.richTextBoxOccupancyRate.Name = "richTextBoxOccupancyRate";
-            this.richTextBoxOccupancyRate.Size = new System.Drawing.Size(1108, 458);
-            this.richTextBoxOccupancyRate.TabIndex = 3;
-            this.richTextBoxOccupancyRate.Text = "";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(1090, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonOccupancyRate
+            // label29
             // 
-            this.buttonOccupancyRate.Location = new System.Drawing.Point(314, 81);
-            this.buttonOccupancyRate.Name = "buttonOccupancyRate";
-            this.buttonOccupancyRate.Size = new System.Drawing.Size(75, 23);
-            this.buttonOccupancyRate.TabIndex = 4;
-            this.buttonOccupancyRate.Text = "Search";
-            this.buttonOccupancyRate.UseVisualStyleBackColor = true;
-            this.buttonOccupancyRate.Click += new System.EventHandler(this.buttonOccupancyRate_Click);
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(37, 123);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Data: ";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(314, 123);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(42, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Time: ";
+            // 
+            // datePickerSpotSpecificTime
+            // 
+            this.datePickerSpotSpecificTime.Location = new System.Drawing.Point(95, 123);
+            this.datePickerSpotSpecificTime.Name = "datePickerSpotSpecificTime";
+            this.datePickerSpotSpecificTime.Size = new System.Drawing.Size(200, 20);
+            this.datePickerSpotSpecificTime.TabIndex = 7;
+            // 
+            // TimePickerSpotSpecificTime
+            // 
+            this.TimePickerSpotSpecificTime.CustomFormat = "HH:mm:ss tt";
+            this.TimePickerSpotSpecificTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePickerSpotSpecificTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TimePickerSpotSpecificTime.Location = new System.Drawing.Point(362, 123);
+            this.TimePickerSpotSpecificTime.Name = "TimePickerSpotSpecificTime";
+            this.TimePickerSpotSpecificTime.ShowUpDown = true;
+            this.TimePickerSpotSpecificTime.Size = new System.Drawing.Size(200, 20);
+            this.TimePickerSpotSpecificTime.TabIndex = 8;
             // 
             // Form1
             // 
@@ -943,6 +1002,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -957,9 +1017,9 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1042,6 +1102,11 @@
         private System.Windows.Forms.ComboBox comboBoxOccupancyRate;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.DateTimePicker TimePickerSpotSpecificTime;
+        private System.Windows.Forms.DateTimePicker datePickerSpotSpecificTime;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
     }
 }
 
