@@ -182,15 +182,24 @@ namespace AdminDashboard
                 this.tabControl1.TabPages[0].Focus();
             }
 
+            MessageBox.Show(spotsPerData.Count().ToString()+" Spots found");
             spotsPerData.Clear();
-            MessageBox.Show(spotsPerData.Count().ToString());
+            
         }
 
         private string ShowSpot(Spots s)
         {
+            string batteryStatus="";
+            if(s.BatteryStatus == 1)
+            {
+                batteryStatus = "Needs Replacement";
+            } else
+            {
+                batteryStatus = "Is fine";
+            }
             return string.Format("Id: {0} \n\tName: {1} \n\tType: {2} \n\tLatitude: {3} " +
                 "\n\tLongitude: {4} \n\tValue: {5} \n\tDate Time: {6} \n\tBattery Status: {7} \n\n",
-                s.Id, s.Name, s.Type, s.Latitude, s.Longitude, s.Value, s.Timestamp, s.BatteryStatus);
+                s.Id, s.Name, s.Type, s.Latitude, s.Longitude, s.Value, s.Timestamp, batteryStatus);
         }
 
         private string ShowPark(Park p)
@@ -208,10 +217,9 @@ namespace AdminDashboard
             string park = parkSpecificParkData.SelectedItem.ToString();
             string toAppendAPI = "api/parks/" + park + "/startdate/" + startData + "T" + startTime + "/finaldate/" + endData + "T" + endTime;
 
-            if(spotsSpecificParkPerData.Count() == 0)
-            {
-                loadAPIS(2, toAppendAPI);
-            }
+            
+            loadAPIS(2, toAppendAPI);
+            
 
             spotsSpecificParkData.Clear();
 
@@ -220,6 +228,8 @@ namespace AdminDashboard
                 spotsSpecificParkData.AppendText(ShowSpot(spot));
                 this.tabControl1.TabPages[0].Focus();
             }
+
+            MessageBox.Show(spotsSpecificParkPerData.Count.ToString() + " Spots found");
         }
 
         private void buttonListBelongingPark_Click(object sender, EventArgs e)
@@ -227,10 +237,9 @@ namespace AdminDashboard
             string park = comboBoxSpotsSpecificPark.SelectedItem.ToString();
             string toAppendAPI = "api/spots/park/" + park;
 
-            if (listSpotsBelongingPark.Count() == 0)
-            {
-                loadAPIS(4, toAppendAPI);
-            }
+            listSpotsBelongingPark.Clear();
+            loadAPIS(4, toAppendAPI);
+            
             
 
             richTextBoxListBelongingPark.Clear();
@@ -254,13 +263,15 @@ namespace AdminDashboard
                 loadAPIS(3, toAppendAPI);
             }
 
-            richTextBox2.Clear();
+            richTextBoxFreeParkingSpot.Clear();
 
             foreach (Spots spot in freeSpotsSpecificPark)
             {
                 richTextBoxFreeParkingSpot.AppendText(ShowSpot(spot));
                 this.tabControl1.TabPages[0].Focus();
             }
+
+            MessageBox.Show(freeSpotsSpecificPark.Count.ToString()+" Spots found");
         }
 
         private void buttonSpecificPark_Click(object sender, EventArgs e)
@@ -268,14 +279,11 @@ namespace AdminDashboard
             string park = comboBoxInfoSpecificPark.SelectedItem.ToString();
             string toAppendAPI = "api/parks/" + park;
 
-            if(parkInfoSpecificPark == null)
-            {
-                loadAPIS(5, toAppendAPI);
-            }
+            loadAPIS(5, toAppendAPI);
 
             richTextBoxInfoSpecificPark.Clear();
 
-           richTextBoxInfoSpecificPark.AppendText(ShowPark(parkInfoSpecificPark));
+            richTextBoxInfoSpecificPark.AppendText(ShowPark(parkInfoSpecificPark));
         }
 
         private void buttonSpotsNeedReplace_Click(object sender, EventArgs e)
@@ -301,10 +309,9 @@ namespace AdminDashboard
             string park = comboBoxSpotsReplacePark.SelectedItem.ToString();
             string toAppendAPI = "api/spots/park/" + park + "/needReplace";
 
-            if(listSpotsNeedReplaceSpecificPark.Count() == 0)
-            {
-                loadAPIS(8, toAppendAPI);
-            }
+            
+            loadAPIS(8, toAppendAPI);
+            
 
             richTextBoxNeedReplacePark.Clear();
 
@@ -320,10 +327,8 @@ namespace AdminDashboard
             string park = comboBoxOccupancyRate.SelectedItem.ToString();
             string toAppendAPI = "api/spots/park/" + park + "/occupancyRate";
 
-            if (occupancyRate == null)
-            {
-                loadAPIS(9, toAppendAPI);
-            }
+            
+            loadAPIS(9, toAppendAPI);
 
             richTextBoxOccupancyRate.Clear();
 
@@ -338,16 +343,15 @@ namespace AdminDashboard
             string data = datePickerSpotSpecificTime.Value.ToString("yyyy-M-d");
             string time = TimePickerSpotSpecificTime.Value.ToString("HH:mm:ss");
                
-            if(infoSpecificSpot == null)
-            {
-                string toAppendAPI = "api/spots/" + spot + "/" + data + "T" + time;
-                loadAPIS(6, toAppendAPI);
-            }
+            
+            string toAppendAPI = "api/spots/" + spot + "/" + data + "T" + time;
+            loadAPIS(6, toAppendAPI);
+            
 
             richTextBoxInfoSpecificSpot.Clear();
 
 
-            if (infoSpecificSpot.ToString() == null)
+            if (infoSpecificSpot.Id != null)
             {
                 
                 richTextBoxInfoSpecificSpot.AppendText(ShowSpot(infoSpecificSpot));

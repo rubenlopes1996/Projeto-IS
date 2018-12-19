@@ -110,7 +110,7 @@ namespace SmartPark.Controllers
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.batteryStatus, s.type, s.value, s.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@nameOfPark And hs.timestamp = @time And hs.value = 'free'", conn);
+                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.batteryStatus, s.type, hs.value, hs.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@nameOfPark And hs.timestamp = @time And hs.value = 'free'", conn);
                 cmd.Parameters.AddWithValue("@nameOfPark", parksName);
                 cmd.Parameters.AddWithValue("@time", timestamp);
 

@@ -45,9 +45,10 @@
             // 
             // btnStartDataAcquisition
             // 
-            this.btnStartDataAcquisition.Location = new System.Drawing.Point(276, 331);
+            this.btnStartDataAcquisition.Location = new System.Drawing.Point(211, 261);
+            this.btnStartDataAcquisition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStartDataAcquisition.Name = "btnStartDataAcquisition";
-            this.btnStartDataAcquisition.Size = new System.Drawing.Size(219, 81);
+            this.btnStartDataAcquisition.Size = new System.Drawing.Size(164, 66);
             this.btnStartDataAcquisition.TabIndex = 0;
             this.btnStartDataAcquisition.Text = "Start data acquisition";
             this.btnStartDataAcquisition.UseVisualStyleBackColor = true;
@@ -60,17 +61,19 @@
             // 
             // richTextBoxSpotsDLL
             // 
-            this.richTextBoxSpotsDLL.Location = new System.Drawing.Point(12, 40);
+            this.richTextBoxSpotsDLL.Location = new System.Drawing.Point(9, 32);
+            this.richTextBoxSpotsDLL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBoxSpotsDLL.Name = "richTextBoxSpotsDLL";
-            this.richTextBoxSpotsDLL.Size = new System.Drawing.Size(381, 251);
+            this.richTextBoxSpotsDLL.Size = new System.Drawing.Size(287, 205);
             this.richTextBoxSpotsDLL.TabIndex = 1;
             this.richTextBoxSpotsDLL.Text = "";
             // 
             // richTextBoxSpotsBot
             // 
-            this.richTextBoxSpotsBot.Location = new System.Drawing.Point(399, 40);
+            this.richTextBoxSpotsBot.Location = new System.Drawing.Point(299, 32);
+            this.richTextBoxSpotsBot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBoxSpotsBot.Name = "richTextBoxSpotsBot";
-            this.richTextBoxSpotsBot.Size = new System.Drawing.Size(389, 251);
+            this.richTextBoxSpotsBot.Size = new System.Drawing.Size(293, 205);
             this.richTextBoxSpotsBot.TabIndex = 2;
             this.richTextBoxSpotsBot.Tag = "";
             this.richTextBoxSpotsBot.Text = "";
@@ -78,32 +81,34 @@
             // BOT
             // 
             this.BOT.AutoSize = true;
-            this.BOT.Location = new System.Drawing.Point(407, 20);
+            this.BOT.Location = new System.Drawing.Point(305, 16);
+            this.BOT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BOT.Name = "BOT";
-            this.BOT.Size = new System.Drawing.Size(37, 17);
+            this.BOT.Size = new System.Drawing.Size(29, 13);
             this.BOT.TabIndex = 3;
             this.BOT.Text = "BOT";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Location = new System.Drawing.Point(9, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "DLL";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BOT);
             this.Controls.Add(this.richTextBoxSpotsBot);
             this.Controls.Add(this.richTextBoxSpotsDLL);
             this.Controls.Add(this.btnStartDataAcquisition);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -1,0 +1,11 @@
+<parkingSpot>
+    <id>Campus_2_B_Park2</id>
+    <type>Parking spot</type>
+    <name>B-1</name>
+    <location>39.734859,-8.820784</location>
+    <status>
+        <value>occupied</value>
+        <timestamp>19/12/18 15:36:01</timestamp>
+    </status>
+    <batteryStatus>1</batteryStatus>
+</parkingSpot>

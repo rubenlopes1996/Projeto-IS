@@ -71,7 +71,7 @@ namespace SmartPark.Controllers
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.type, s.value, s.batterystatus, s.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@parksName And hs.timestamp = @date", conn);
+                SqlCommand cmd = new SqlCommand("Select s.id, s.name, s.type, hs.value, s.batterystatus, hs.timestamp, s.geoLatitude, s.geoLongitude From Spots s Join History_Spots hs ON (s.name = hs.idSpot) Where s.id=@parksName And hs.timestamp = @date", conn);
                 //DbFunctions.TruncateTime(hs.timestamp) = DbFunctions.TruncateTime(@date)
                 //SqlCommand cmd = new SqlCommand("Select * from History_Spots Where timestamp = @date", conn);
 
